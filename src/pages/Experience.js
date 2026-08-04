@@ -1,11 +1,11 @@
 import { Box, Card, CardContent, Container, Link, Stack, Typography } from '@mui/material';
 
-import hpe from '../assets/hpe.jpeg';
+import hpe from '../assets/HPE.png';
 import aimahead from '../assets/aimahead.jpeg';
 import endeavr from '../assets/endeavr.jpeg';
-import reuIntern from '../assets/reu_intern.jpeg';
-import aggieResearch from '../assets/Aggie_Research_Program.jpeg';
-import roboMasters from '../assets/Standard.jpeg';
+import reuIntern from '../assets/University_Of_Delaware.jpeg';
+import aggieResearch from '../assets/Texas_A&M.svg';
+import texasAimbots from '../assets/Texas_Aimbots.jpg';
 import aggieCodingClub from '../assets/Aggie_Coding_Club.jpeg';
 
 import Reveal from '../components/Reveal';
@@ -44,7 +44,7 @@ const experiences = [
   },
   {
     organization: 'ENDEAVR Institute',
-    role: 'Autonomous Driving Research Intern',
+    role: 'AI Engineer Intern',
     period: 'Oct 2024–Feb 2025',
     location: 'College Station, TX',
     link: 'https://endeavr.city/',
@@ -56,7 +56,7 @@ const experiences = [
   },
   {
     organization: 'University of Delaware',
-    role: 'Machine Learning Research Intern',
+    role: 'Autonomous Driving Research Intern',
     period: 'Jun 2023–Aug 2023',
     location: 'Newark, DE',
     link: 'https://mrsec.udel.edu/undergraduate-education-and-outreach/reu/',
@@ -106,10 +106,10 @@ const publications = [
 
 const activities = [
   {
-    organization: 'TAMU RoboMasters',
+    organization: 'Texas Aimbots',
     role: 'Computer Vision Developer',
     period: 'Aug 2023–May 2024',
-    image: roboMasters,
+    image: texasAimbots,
     tags: ['Python', 'OpenCV'],
     bullets: [
       'Implemented OpenCV-based target detection and contour extraction for RoboMaster University League competition robots.',

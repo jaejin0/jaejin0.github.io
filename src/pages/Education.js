@@ -1,7 +1,7 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Card, Container, Grid, Stack, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import tamu from '../assets/tamu_image.jpeg';
+import tamu from '../assets/peterson.jpg';
 import gradImage from '../assets/graduation_Alma_Mater.jpeg';
 import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
@@ -15,7 +15,7 @@ const education = [
     image: tamu,
     summary: 'M.S. student conducting thesis research in multi-robot systems, with a focus on communication-aware planning and rendezvous under cyclic paths.',
     details: [
-      'Advisor: Dylan Shell',
+      'Advisor: Dr. Dylan Shell',
       'Research areas: multi-robot communication, graph-based planning, coordination, and autonomous systems',
       'Paper accepted to IROS 2026',
     ],
@@ -23,7 +23,7 @@ const education = [
       'AI Robotics',
       'Intelligent Agents',
       'Multi-Agent Reinforcement Learning',
-      'Machine Learning',
+      'Robotics and Spatial Intelligence',
       'Computational Optimization',
     ],
   },
@@ -78,7 +78,7 @@ function Education() {
                       <Typography variant="h5">{item.degree}</Typography>
                       <Typography sx={{ mt: 0.5, fontWeight: 650 }}>{item.institution}</Typography>
                     </Box>
-                    <Typography color="text.secondary" variant="body2">{item.period}</Typography>
+                    <Typography color="text.secondary" variant="body2" noWrap sx={{ flexShrink: 0 }}>{item.period}</Typography>
                   </Stack>
 
                   <Typography color="text.secondary" sx={{ mt: 2.5, lineHeight: 1.72 }}>

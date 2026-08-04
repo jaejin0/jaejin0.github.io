@@ -26,7 +26,7 @@ const focusAreas = [
 const featuredWork = [
   {
     title: 'Enterprise AI at HPE',
-    text: 'Database-backed AI applications for natural-language data exploration, text-to-SQL, retrieval, guardrails, and operational insights.',
+    text: 'AI Database applications for natural-language data exploration, text-to-SQL, RAG, tool calling, guardrails, and operational insights.',
     to: '/portfolio/experience',
   },
   {
@@ -44,7 +44,7 @@ const featuredWork = [
 const skills = {
   Languages: ['Python', 'C++', 'SQL', 'PL/SQL', 'JavaScript'],
   'AI / ML': ['PyTorch', 'scikit-learn', 'OpenCV', 'Reinforcement Learning', 'Imitation Learning'],
-  'LLM / Data': ['RAG', 'Tool Calling', 'Text-to-SQL', 'LangChain', 'Oracle AI Database'],
+  'LLM': ['RAG', 'Tool Calling', 'Text-to-SQL', 'LangChain', 'Oracle AI Database'],
   Systems: ['Linux', 'Docker', 'OCI', 'Oracle APEX', 'REST APIs', 'Git'],
 };
 
@@ -61,7 +61,7 @@ function AboutMe() {
               AI Systems • Cloud & Data Platforms • Robotics
             </Typography>
             <Typography variant="h3" component="h1" sx={{ mt: 1.5, mb: 3 }}>
-              I build practical AI systems that connect models, data, software, and autonomous systems.
+              I build intelligent software that connects models with real-world data and systems.
             </Typography>
             <Typography color="text.secondary" sx={{ fontSize: '1.08rem', lineHeight: 1.82, maxWidth: 760 }}>
               I am an M.S. Computer Science student at Texas A&amp;M University, graduating in December 2026,

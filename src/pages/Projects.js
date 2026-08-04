@@ -1,8 +1,9 @@
 import { Box, Button, Card, CardContent, Container, Grid, Link, Stack, Typography } from '@mui/material';
 
+import jalam_trading_bot from '../assets/JAL_AM_Trading_Bot.jpg';
 import natureNet from '../assets/NatureNet.jpeg';
 import maesPointsReward from '../assets/maes_points_reward_system.jpeg';
-import kungFuTea from '../assets/kung_fu_tea.jpeg';
+import kungFuTea from '../assets/kung_fu_tea.jpg';
 
 import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
@@ -15,8 +16,8 @@ const projectGroups = [
     projects: [
       {
         title: 'JAL-AM Trading Simulator',
-        period: '2024–2025',
-        image: null,
+        period: 'Nov 2024–Feb 2025',
+        image: jalam_trading_bot,
         tags: ['Python', 'PyTorch', 'NumPy', 'MDP', 'Multi-Agent Learning'],
         summary: 'A market-simulation environment for reinforcement-learning and agent-modeling experiments.',
         bullets: [
@@ -47,7 +48,7 @@ const projectGroups = [
         title: 'MAES Points Reward System',
         period: 'Jan 2024–May 2024',
         image: maesPointsReward,
-        link: 'https://maes-rewards-6faf74a71462.herokuapp.com/',
+        // link: 'https://maes-rewards-6faf74a71462.herokuapp.com/',
         linkLabel: 'Restricted demo',
         tags: ['Ruby on Rails', 'PostgreSQL', 'Heroku', 'CI/CD'],
         summary: 'A deployed rewards platform for a Texas A&M student organization.',
