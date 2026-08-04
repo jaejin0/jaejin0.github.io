@@ -2,12 +2,15 @@ import { Avatar, Box, Button, Card, Container, Grid, Link, Stack, Typography } f
 import { Link as RouterLink } from 'react-router-dom';
 
 import jaejin from '../assets/jaejin.jpeg';
+import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
 import TagList from '../components/TagList';
 
+const resumeHref = `${process.env.PUBLIC_URL || ''}/Jaejin_Cha_Resume.pdf`;
+
 const focusAreas = [
   {
-    title: 'AI Platforms & Data Systems',
+    title: 'AI Systems & Data Platforms',
     text: 'Enterprise AI applications, natural-language data exploration, RAG, tool-calling workflows, Oracle databases, OCI, and REST APIs.',
   },
   {
@@ -16,7 +19,25 @@ const focusAreas = [
   },
   {
     title: 'Applied Machine Learning',
-    text: 'Computer vision, clinical data modeling, model evaluation, and end-to-end ML-backed applications.',
+    text: 'Computer vision, clinical data modeling, model evaluation, and end-to-end ML-backed software systems.',
+  },
+];
+
+const featuredWork = [
+  {
+    title: 'Enterprise AI at HPE',
+    text: 'Database-backed AI applications for natural-language data exploration, text-to-SQL, retrieval, guardrails, and operational insights.',
+    to: '/portfolio/experience',
+  },
+  {
+    title: 'Multi-Robot Research',
+    text: 'IROS 2026-accepted work on communication-aware planning and execution for robots following cyclic paths.',
+    to: '/portfolio/experience',
+  },
+  {
+    title: 'End-to-End Software Projects',
+    text: 'Applied ML and full-stack systems spanning computer vision, PostgreSQL-backed applications, APIs, deployment, and user workflows.',
+    to: '/portfolio/projects',
   },
 ];
 
@@ -32,51 +53,59 @@ function AboutMe() {
     <Container maxWidth="lg" sx={{ py: { xs: 7, md: 11 } }}>
       <Grid container spacing={5} alignItems="center">
         <Grid item xs={12} md={7}>
-          <Typography variant="overline" sx={{ color: 'primary.main', fontWeight: 750, letterSpacing: '0.14em' }}>
-            AI Systems • Cloud & Data Platforms • Robotics
-          </Typography>
-          <Typography variant="h3" component="h1" sx={{ mt: 1.5, mb: 3 }}>
-            I build practical AI systems that connect models, data, software, and autonomous systems.
-          </Typography>
-          <Typography color="text.secondary" sx={{ fontSize: '1.08rem', lineHeight: 1.8, maxWidth: 760 }}>
-            I am an M.S. Computer Science candidate at Texas A&amp;M University, graduating in December 2026,
-            and a Software Engineer at HPE. My work spans enterprise AI applications, Oracle and OCI-backed
-            data workflows, multi-robot planning, autonomous-driving simulation, and applied machine learning.
-          </Typography>
-          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ mt: 4 }}>
-            <Button component={RouterLink} to="/portfolio/experience" variant="contained" size="large">
-              View Experience
-            </Button>
-            <Button component={RouterLink} to="/portfolio/projects" variant="outlined" size="large">
-              View Projects
-            </Button>
-            <Button
-              component={Link}
-              href="https://www.linkedin.com/in/jaejincha/"
-              target="_blank"
-              rel="noreferrer"
-              size="large"
+          <Reveal>
+            <Typography
+              variant="overline"
+              sx={{ color: 'primary.main', fontWeight: 780, letterSpacing: '0.14em' }}
             >
-              LinkedIn
-            </Button>
-          </Stack>
+              AI Systems • Cloud & Data Platforms • Robotics
+            </Typography>
+            <Typography variant="h3" component="h1" sx={{ mt: 1.5, mb: 3 }}>
+              I build practical AI systems that connect models, data, software, and autonomous systems.
+            </Typography>
+            <Typography color="text.secondary" sx={{ fontSize: '1.08rem', lineHeight: 1.82, maxWidth: 760 }}>
+              I am an M.S. Computer Science student at Texas A&amp;M University, graduating in December 2026,
+              and a Software Engineer at HPE. I build enterprise AI applications for natural-language data
+              exploration and database-backed workflows, while researching multi-robot communication and
+              graph-based planning.
+            </Typography>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ mt: 4 }}>
+              <Button component={RouterLink} to="/portfolio/experience" variant="contained" size="large">
+                View Experience
+              </Button>
+              <Button component={RouterLink} to="/portfolio/projects" variant="outlined" size="large">
+                View Projects
+              </Button>
+              <Button component="a" href={resumeHref} target="_blank" rel="noreferrer" size="large">
+                View Resume
+              </Button>
+            </Stack>
+          </Reveal>
         </Grid>
 
         <Grid item xs={12} md={5}>
-          <Card sx={{ p: 3.5, textAlign: 'center' }}>
-            <Avatar
-              alt="Jaejin Cha"
-              src={jaejin}
-              sx={{ width: 220, height: 220, maxWidth: '70vw', maxHeight: '70vw', mx: 'auto', mb: 3 }}
-            />
-            <Typography variant="h5">Jaejin Cha</Typography>
-            <Typography color="text.secondary" sx={{ mt: 0.75 }}>
-              Software Engineer · M.S. Computer Science Candidate
-            </Typography>
-            <Typography color="text.secondary" variant="body2" sx={{ mt: 2 }}>
-              Texas A&amp;M University · Hewlett Packard Enterprise
-            </Typography>
-          </Card>
+          <Reveal delay={120}>
+            <Card
+              sx={{
+                p: 3.5,
+                textAlign: 'center',
+                background: 'linear-gradient(145deg, rgba(255,255,255,0.98), rgba(233,240,251,0.72))',
+              }}
+            >
+              <Avatar
+                alt="Jaejin Cha"
+                src={jaejin}
+                sx={{ width: 220, height: 220, maxWidth: '70vw', maxHeight: '70vw', mx: 'auto', mb: 3 }}
+              />
+              <Typography variant="h5">Jaejin Cha</Typography>
+              <Typography color="text.secondary" sx={{ mt: 0.75 }}>
+                Software Engineer · M.S. Computer Science Student
+              </Typography>
+              <Typography color="text.secondary" variant="body2" sx={{ mt: 2 }}>
+                Texas A&amp;M University · Hewlett Packard Enterprise
+              </Typography>
+            </Card>
+          </Reveal>
         </Grid>
       </Grid>
 
@@ -84,19 +113,46 @@ function AboutMe() {
         <SectionHeading
           eyebrow="Focus"
           title="What I work on"
-          description="My portfolio is organized around three connected areas rather than a long list of unrelated technologies."
+          description="Three connected areas define my work: building AI-enabled software, reasoning over data, and developing intelligent systems that operate in the physical world."
         />
         <Grid container spacing={2.5}>
-          {focusAreas.map((area) => (
+          {focusAreas.map((area, index) => (
             <Grid item xs={12} md={4} key={area.title}>
-              <Card sx={{ p: 3, height: '100%' }}>
-                <Typography variant="h6" sx={{ fontWeight: 750, mb: 1.25 }}>
-                  {area.title}
-                </Typography>
-                <Typography color="text.secondary" sx={{ lineHeight: 1.7 }}>
-                  {area.text}
-                </Typography>
-              </Card>
+              <Reveal delay={index * 90} sx={{ height: '100%' }}>
+                <Card sx={{ p: 3, height: '100%' }}>
+                  <Typography variant="h6" sx={{ mb: 1.25 }}>
+                    {area.title}
+                  </Typography>
+                  <Typography color="text.secondary" sx={{ lineHeight: 1.72 }}>
+                    {area.text}
+                  </Typography>
+                </Card>
+              </Reveal>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+
+      <Box sx={{ mt: { xs: 10, md: 14 } }}>
+        <SectionHeading
+          eyebrow="Selected Work"
+          title="Evidence across systems and research"
+          description="A few representative areas that connect my professional software work, robotics research, and project experience."
+        />
+        <Grid container spacing={2.5}>
+          {featuredWork.map((item, index) => (
+            <Grid item xs={12} md={4} key={item.title}>
+              <Reveal delay={index * 90} sx={{ height: '100%' }}>
+                <Card sx={{ p: 3, height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  <Typography variant="h6">{item.title}</Typography>
+                  <Typography color="text.secondary" sx={{ mt: 1.25, mb: 2.5, lineHeight: 1.7, flexGrow: 1 }}>
+                    {item.text}
+                  </Typography>
+                  <Button component={RouterLink} to={item.to} sx={{ alignSelf: 'flex-start', px: 0 }}>
+                    Explore
+                  </Button>
+                </Card>
+              </Reveal>
             </Grid>
           ))}
         </Grid>
@@ -106,17 +162,19 @@ function AboutMe() {
         <SectionHeading
           eyebrow="Toolkit"
           title="Technical skills"
-          description="These are technologies and methods I have used in coursework, research, projects, or professional work."
+          description="Technologies and methods I have used in professional work, research, or substantial software projects."
         />
         <Grid container spacing={2.5}>
-          {Object.entries(skills).map(([group, items]) => (
+          {Object.entries(skills).map(([group, items], index) => (
             <Grid item xs={12} sm={6} key={group}>
-              <Card sx={{ p: 3, height: '100%' }}>
-                <Typography variant="h6" sx={{ fontWeight: 750, mb: 2 }}>
-                  {group}
-                </Typography>
-                <TagList items={items} />
-              </Card>
+              <Reveal delay={(index % 2) * 80} sx={{ height: '100%' }}>
+                <Card sx={{ p: 3, height: '100%' }}>
+                  <Typography variant="h6" sx={{ mb: 2 }}>
+                    {group}
+                  </Typography>
+                  <TagList items={items} />
+                </Card>
+              </Reveal>
             </Grid>
           ))}
         </Grid>
@@ -124,20 +182,22 @@ function AboutMe() {
 
       <Box sx={{ mt: { xs: 10, md: 14 } }}>
         <SectionHeading eyebrow="Contact" title="Let’s connect" />
-        <Card sx={{ p: 3.5 }}>
-          <Stack direction={{ xs: 'column', md: 'row' }} spacing={2} justifyContent="space-between">
-            <Box>
-              <Typography variant="h6" sx={{ fontWeight: 750 }}>Open to new-grad opportunities</Typography>
-              <Typography color="text.secondary" sx={{ mt: 0.75 }}>
-                AI platform engineering, applied AI, robotics software, simulation, and research engineering.
-              </Typography>
-            </Box>
-            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-              <Link href="mailto:jaejin0109@gmail.com" underline="hover">jaejin0109@gmail.com</Link>
-              <Link href="https://github.com/jaejin0" target="_blank" rel="noreferrer" underline="hover">github.com/jaejin0</Link>
+        <Reveal>
+          <Card sx={{ p: 3.5 }}>
+            <Stack direction={{ xs: 'column', md: 'row' }} spacing={2.5} justifyContent="space-between">
+              <Box>
+                <Typography variant="h6">Open to December 2026 new-grad opportunities</Typography>
+                <Typography color="text.secondary" sx={{ mt: 0.75 }}>
+                  AI platform engineering, applied AI, robotics software, simulation, and research engineering.
+                </Typography>
+              </Box>
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+                <Link href="mailto:jaejin0109@gmail.com" underline="hover">jaejin0109@gmail.com</Link>
+                <Link href="https://github.com/jaejin0" target="_blank" rel="noreferrer" underline="hover">github.com/jaejin0</Link>
+              </Stack>
             </Stack>
-          </Stack>
-        </Card>
+          </Card>
+        </Reveal>
       </Box>
     </Container>
   );

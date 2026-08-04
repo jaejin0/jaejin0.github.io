@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { BrowserRouter, Outlet, Route, Routes, useLocation } from 'react-router-dom';
 
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
@@ -14,7 +14,7 @@ function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }, [pathname]);
 
   return null;

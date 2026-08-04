@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Chip, Container, Grid, Link, Stack, Typography } from '@mui/material';
+import { Box, Card, CardContent, Container, Link, Stack, Typography } from '@mui/material';
 
 import hpe from '../assets/hpe.jpeg';
 import aimahead from '../assets/aimahead.jpeg';
@@ -8,6 +8,7 @@ import aggieResearch from '../assets/Aggie_Research_Program.jpeg';
 import roboMasters from '../assets/Standard.jpeg';
 import aggieCodingClub from '../assets/Aggie_Coding_Club.jpeg';
 
+import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
 import TagList from '../components/TagList';
 
@@ -21,10 +22,11 @@ const experiences = [
     image: hpe,
     tags: ['Oracle APEX', 'PL/SQL', 'OCI', 'RAG', 'Text-to-SQL', 'REST APIs'],
     bullets: [
-      'Built internal AI applications that let operations leaders query operational data in natural language and generate on-demand insights.',
+      'Built internal AI applications enabling operations leaders to query operational data in natural language and generate on-demand insights.',
       'Implemented text-to-SQL and tool-calling workflows with Oracle AI Database, PL/SQL packages, and business-rule guardrails.',
       'Built a custom vector store and similarity-search layer in Oracle 19c using PL/SQL, REST APIs, and embedding models.',
       'Developed Oracle APEX interfaces with persistent chat history, session management, and OCI-integrated AI workflows.',
+      'Prototyped MCP-based tool integration for internal agent workflows.',
     ],
   },
   {
@@ -79,6 +81,29 @@ const experiences = [
   },
 ];
 
+const publications = [
+  {
+    authors: 'Jaejin Cha, Dylan Shell',
+    title: 'Planning and Execution for Multi-Robot Cyclic Rendezvous via Graphs of Convex Sets',
+    venue: 'IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)',
+    status: 'Accepted',
+    year: '2026',
+    description:
+      'Developed graph-based planning and execution methods for communication-aware coordination among robots following cyclic paths.',
+    link: '',
+  },
+  {
+    authors: 'Jaejin Cha',
+    title: 'Rendezvous-Based Multi-Robot Communication Under Cyclic Paths',
+    venue: "M.S. Thesis, Texas A&M University",
+    status: 'Defended',
+    year: '2026',
+    description:
+      'Studied rendezvous-based communication and coordination for robots operating along cyclic paths under limited communication.',
+    link: '',
+  },
+];
+
 const activities = [
   {
     organization: 'TAMU RoboMasters',
@@ -86,7 +111,9 @@ const activities = [
     period: 'Aug 2023–May 2024',
     image: roboMasters,
     tags: ['Python', 'OpenCV'],
-    bullets: ['Implemented OpenCV-based target detection and contour extraction for RoboMaster University League competition robots.'],
+    bullets: [
+      'Implemented OpenCV-based target detection and contour extraction for RoboMaster University League competition robots.',
+    ],
   },
   {
     organization: 'Aggie Coding Club',
@@ -94,34 +121,56 @@ const activities = [
     period: 'Jan 2022–May 2022',
     image: aggieCodingClub,
     tags: ['React', 'JavaScript', 'Technical Leadership'],
-    bullets: ['Led 20+ members in web-development workshops and coordinated React projects including personal websites and e-commerce interfaces.'],
+    bullets: [
+      'Led 20+ members in web-development workshops and coordinated React projects including personal websites and e-commerce interfaces.',
+    ],
   },
 ];
 
 function ExperienceCard({ item }) {
   return (
-    <Card sx={{ overflow: 'hidden' }}>
-      <Grid container>
-        <Grid item xs={12} md={4}>
-          <Box
-            component="img"
-            src={item.image}
-            alt={`${item.organization} visual`}
-            sx={{ width: '100%', height: '100%', minHeight: 210, objectFit: 'cover' }}
-          />
-        </Grid>
-        <Grid item xs={12} md={8}>
-          <CardContent sx={{ p: { xs: 2.5, md: 3.5 } }}>
+    <Card>
+      <CardContent sx={{ p: { xs: 2.5, md: 3.5 } }}>
+        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2.5} alignItems={{ xs: 'flex-start', sm: 'flex-start' }}>
+          {item.image && (
+            <Box
+              sx={{
+                width: 76,
+                height: 76,
+                flex: '0 0 auto',
+                borderRadius: 2.5,
+                bgcolor: '#fff',
+                border: '1px solid',
+                borderColor: 'divider',
+                p: 1,
+                display: 'grid',
+                placeItems: 'center',
+                overflow: 'hidden',
+              }}
+            >
+              <Box
+                component="img"
+                src={item.image}
+                alt={`${item.organization} logo or activity image`}
+                loading="lazy"
+                sx={{ width: '100%', height: '100%', objectFit: 'contain' }}
+              />
+            </Box>
+          )}
+
+          <Box sx={{ flexGrow: 1, minWidth: 0 }}>
             <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="space-between" spacing={1.5}>
               <Box>
-                <Typography variant="h5" sx={{ fontWeight: 750 }}>
+                <Typography variant="h5">
                   {item.link ? (
                     <Link href={item.link} target="_blank" rel="noreferrer" color="inherit" underline="hover">
                       {item.organization}
                     </Link>
-                  ) : item.organization}
+                  ) : (
+                    item.organization
+                  )}
                 </Typography>
-                <Typography sx={{ mt: 0.5, fontWeight: 600 }}>{item.role}</Typography>
+                <Typography sx={{ mt: 0.5, fontWeight: 650 }}>{item.role}</Typography>
               </Box>
               <Box sx={{ textAlign: { xs: 'left', sm: 'right' }, minWidth: 'fit-content' }}>
                 <Typography color="text.secondary" variant="body2">{item.period}</Typography>
@@ -129,17 +178,49 @@ function ExperienceCard({ item }) {
               </Box>
             </Stack>
 
-            <Box component="ul" sx={{ pl: 2.5, my: 2.5, color: 'text.secondary' }}>
+            <Box component="ul" sx={{ pl: 2.5, my: 2.25, color: 'text.secondary' }}>
               {item.bullets.map((bullet) => (
-                <Typography component="li" key={bullet} sx={{ mb: 1, lineHeight: 1.65 }}>
+                <Typography component="li" key={bullet} sx={{ mb: 0.9, lineHeight: 1.68 }}>
                   {bullet}
                 </Typography>
               ))}
             </Box>
             <TagList items={item.tags} />
-          </CardContent>
-        </Grid>
-      </Grid>
+          </Box>
+        </Stack>
+      </CardContent>
+    </Card>
+  );
+}
+
+function PublicationCard({ publication }) {
+  return (
+    <Card>
+      <CardContent sx={{ p: { xs: 2.5, md: 3.25 } }}>
+        <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="space-between" spacing={1.5}>
+          <Box>
+            <Typography color="text.secondary" variant="body2">
+              {publication.authors}
+            </Typography>
+            <Typography variant="h6" sx={{ mt: 0.6, lineHeight: 1.4 }}>
+              {publication.link ? (
+                <Link href={publication.link} target="_blank" rel="noreferrer" color="inherit" underline="hover">
+                  {publication.title}
+                </Link>
+              ) : (
+                publication.title
+              )}
+            </Typography>
+            <Typography color="primary.main" variant="body2" sx={{ mt: 0.75, fontWeight: 700 }}>
+              {publication.venue} · {publication.status}
+            </Typography>
+          </Box>
+          <Typography color="text.secondary" variant="body2">{publication.year}</Typography>
+        </Stack>
+        <Typography color="text.secondary" sx={{ mt: 1.6, lineHeight: 1.7 }}>
+          {publication.description}
+        </Typography>
+      </CardContent>
     </Card>
   );
 }
@@ -153,17 +234,40 @@ function Experience() {
         description="Work spanning enterprise AI systems, health data modeling, autonomous-driving research, and distributed data systems."
       />
       <Stack spacing={3}>
-        {experiences.map((item) => <ExperienceCard key={`${item.organization}-${item.role}`} item={item} />)}
+        {experiences.map((item, index) => (
+          <Reveal key={`${item.organization}-${item.role}`} delay={(index % 3) * 70}>
+            <ExperienceCard item={item} />
+          </Reveal>
+        ))}
       </Stack>
+
+      <Box sx={{ mt: 10 }}>
+        <SectionHeading
+          eyebrow="Research"
+          title="Research and publications"
+          description="My graduate research focuses on communication-aware planning and coordination in multi-robot systems."
+        />
+        <Stack spacing={2.5}>
+          {publications.map((publication, index) => (
+            <Reveal key={publication.title} delay={index * 90}>
+              <PublicationCard publication={publication} />
+            </Reveal>
+          ))}
+        </Stack>
+      </Box>
 
       <Box sx={{ mt: 10 }}>
         <SectionHeading
           eyebrow="Leadership"
           title="Technical leadership and activities"
-          description="Selected technical organizations where I contributed as a developer, project manager, and mentor."
+          description="Selected organizations where I contributed as a developer, project manager, and mentor."
         />
         <Stack spacing={3}>
-          {activities.map((item) => <ExperienceCard key={`${item.organization}-${item.role}`} item={item} />)}
+          {activities.map((item, index) => (
+            <Reveal key={`${item.organization}-${item.role}`} delay={index * 90}>
+              <ExperienceCard item={item} />
+            </Reveal>
+          ))}
         </Stack>
       </Box>
     </Container>

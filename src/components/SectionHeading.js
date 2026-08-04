@@ -1,25 +1,28 @@
 import { Box, Typography } from '@mui/material';
+import Reveal from './Reveal';
 
-function SectionHeading({ eyebrow, title, description }) {
+function SectionHeading({ eyebrow, title, description, component = 'h2' }) {
   return (
-    <Box sx={{ mb: 4 }}>
-      {eyebrow && (
-        <Typography
-          variant="overline"
-          sx={{ color: 'primary.main', fontWeight: 700, letterSpacing: '0.12em' }}
-        >
-          {eyebrow}
+    <Reveal>
+      <Box sx={{ mb: 4 }}>
+        {eyebrow && (
+          <Typography
+            variant="overline"
+            sx={{ color: 'primary.main', fontWeight: 750, letterSpacing: '0.13em' }}
+          >
+            {eyebrow}
+          </Typography>
+        )}
+        <Typography variant="h4" component={component} sx={{ mb: 1 }}>
+          {title}
         </Typography>
-      )}
-      <Typography variant="h4" component="h1" sx={{ fontWeight: 750, mb: 1 }}>
-        {title}
-      </Typography>
-      {description && (
-        <Typography color="text.secondary" sx={{ maxWidth: 760, lineHeight: 1.7 }}>
-          {description}
-        </Typography>
-      )}
-    </Box>
+        {description && (
+          <Typography color="text.secondary" sx={{ maxWidth: 780, lineHeight: 1.75 }}>
+            {description}
+          </Typography>
+        )}
+      </Box>
+    </Reveal>
   );
 }
 
