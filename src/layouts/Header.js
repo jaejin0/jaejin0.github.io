@@ -1,6 +1,18 @@
 import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Box, Container, Button, Slide, useScrollTrigger } from "@mui/material";
 
+
+// set nav bar on the left. It will look like YouTube home page. 
+// Home (button)
+// Experience
+// AI Software Engineer Intern at Endeavr Institute (button)
+// REU at UDel (button)
+// Projects
+// Trading Bot (button)
+// NatureNet (button)
+// Education
+// MS in CS (button)
+// BS in CS (button)
 function Header() {
     return (
         <HideOnScroll>
