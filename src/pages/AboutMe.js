@@ -1,176 +1,146 @@
-import { useState, useEffect } from 'react';
-import { Container, Typography, Box, Card, Link, Grow, Stack, Avatar, ImageList, ImageListItem, Divider } from '@mui/material'
+import { Avatar, Box, Button, Card, Container, Grid, Link, Stack, Typography } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 
-import jaejin from '../assets/jaejin.jpeg'
+import jaejin from '../assets/jaejin.jpeg';
+import SectionHeading from '../components/SectionHeading';
+import TagList from '../components/TagList';
 
-import jaejin1 from '../assets/jaejin1.jpeg'
-import jaejin2 from '../assets/jaejin2.jpeg'
-import jaejin3 from '../assets/jaejin3.jpeg'
-import jaejin4 from '../assets/jaejin4.jpeg'
-import jaejin5 from '../assets/jaejin5.jpeg'
-import jaejin6 from '../assets/jaejin6.jpeg'
-import jaejin7 from '../assets/jaejin7.jpeg'
-import jaejin8 from '../assets/jaejin8.jpeg'
-import jaejin9 from '../assets/jaejin9.jpeg'
-import jaejin10 from '../assets/jaejin10.jpeg'
-import jaejin11 from '../assets/jaejin11.jpeg'
-import jaejin12 from '../assets/jaejin12.jpeg'
+const focusAreas = [
+  {
+    title: 'AI Platforms & Data Systems',
+    text: 'Enterprise AI applications, natural-language data exploration, RAG, tool-calling workflows, Oracle databases, OCI, and REST APIs.',
+  },
+  {
+    title: 'Robotics & Autonomous Systems',
+    text: 'Multi-robot communication, graph-based planning, autonomous-driving simulation, reinforcement learning, and imitation learning.',
+  },
+  {
+    title: 'Applied Machine Learning',
+    text: 'Computer vision, clinical data modeling, model evaluation, and end-to-end ML-backed applications.',
+  },
+];
+
+const skills = {
+  Languages: ['Python', 'C++', 'SQL', 'PL/SQL', 'JavaScript'],
+  'AI / ML': ['PyTorch', 'scikit-learn', 'OpenCV', 'Reinforcement Learning', 'Imitation Learning'],
+  'LLM / Data': ['RAG', 'Tool Calling', 'Text-to-SQL', 'LangChain', 'Oracle AI Database'],
+  Systems: ['Linux', 'Docker', 'OCI', 'Oracle APEX', 'REST APIs', 'Git'],
+};
 
 function AboutMe() {
-    const progLangProf = ['Python', 'SQL', 'PL/SQL', 'Java', 'JavaScript', 'C++']
-    const progLangComp = ['Ruby', 'TypeScript', 'C', 'C#']
-    const frameworkProf = ['PyTorch', 'LangChain', 'MCP', 'Oracle APEX', 'OpenCV', 'ROS', 'React']
-    const frameworkComp = ['Flask', 'Ruby on Rails', 'Express', 'Django', 'Spring Boot', 'Vue']
-    const developerTools = ['Git', 'GitHub', 'Linux', 'Vim', 'Docker', 'Jupyter Notebook', 'AWS', 'Jira']
-    const developerToolsHalf = Math.ceil(developerTools.length / 2)
-
-    const itemData = [jaejin1, jaejin2, jaejin3, jaejin4, jaejin5, jaejin6, jaejin7, jaejin8, jaejin9, jaejin10, jaejin11, jaejin12]
-    const valueList = ['Hard working', 'Passionate', 'Creative', 'Dedicated'];
-    const colorList = ['#4285F4', '#34A853', '#FBBC05', '#EA4335'];
-    const [index, setIndex] = useState(0);
-    const [checked, setChecked] = useState(true);
-
-    let time
-    function timer() {
-        time = setTimeout(() => {
-            setTimeout(() => { // appear
-                setChecked(true)
-            }, 0)
-            setTimeout(() => { // disappear
-                setChecked(false)
-            }, 3000)
-            setTimeout(() => {
-                if (index !== valueList.length - 1) {
-                    setIndex(index + 1);
-                }
-                else {
-                    setIndex(0);
-                }
-            }, 3200)
-        }, 3500);
-    };
-    useEffect(() => {
-        clearTimeout(time)
-        timer();
-    }, [index]);
-    
-    return (
-        <Container maxWidth='md'>
-            <Card
-                variant="outlined"
-                sx={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    alignItems: "center",
-                    gap: 2,
-                    marginTop: 20,
-                    marginLeft: 'auto',
-                    marginRight: 'auto',
-                    padding: 8,
-                }}
+  return (
+    <Container maxWidth="lg" sx={{ py: { xs: 7, md: 11 } }}>
+      <Grid container spacing={5} alignItems="center">
+        <Grid item xs={12} md={7}>
+          <Typography variant="overline" sx={{ color: 'primary.main', fontWeight: 750, letterSpacing: '0.14em' }}>
+            AI Systems • Cloud & Data Platforms • Robotics
+          </Typography>
+          <Typography variant="h3" component="h1" sx={{ mt: 1.5, mb: 3 }}>
+            I build practical AI systems that connect models, data, software, and autonomous systems.
+          </Typography>
+          <Typography color="text.secondary" sx={{ fontSize: '1.08rem', lineHeight: 1.8, maxWidth: 760 }}>
+            I am an M.S. Computer Science candidate at Texas A&amp;M University, graduating in December 2026,
+            and a Software Engineer at HPE. My work spans enterprise AI applications, Oracle and OCI-backed
+            data workflows, multi-robot planning, autonomous-driving simulation, and applied machine learning.
+          </Typography>
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ mt: 4 }}>
+            <Button component={RouterLink} to="/portfolio/experience" variant="contained" size="large">
+              View Experience
+            </Button>
+            <Button component={RouterLink} to="/portfolio/projects" variant="outlined" size="large">
+              View Projects
+            </Button>
+            <Button
+              component={Link}
+              href="https://www.linkedin.com/in/jaejincha/"
+              target="_blank"
+              rel="noreferrer"
+              size="large"
             >
-                <Typography variant='h3' sx={{ marginLeft: '18px' }}>I'm a </Typography>
-                <Grow
-                    in={checked}
-                    style={{ transformOrigin: '0 0 0' }}
-                    {...(checked ? { timeout: 1000 } : {})}
-                >
-                    <Typography variant='h3' color={colorList[index]} sx={{ marginX: 'auto' }}>{valueList[index]}</Typography>
-                </Grow>
-                <Typography variant='h3' sx={{ marginRight: '18px' }}>developer</Typography>
-            </Card>
-            <Box sx={{ marginTop: 20 }}>
-                <Typography variant='h4'>Profile</Typography>
-                <Avatar
-                    alt="Jaejin Cha"
-                    src={jaejin}
-                    sx={{ width: '80%', height: '80%', maxWidth: 400, maxHeight: 400, marginY: 4, marginX: 'auto' }}
-                />
-                <Box sx={{ margin: 4 }}>
-                    <Typography variant='h5' sx={{ fontWeight: '500', marginBottom: 3 }}>Jaejin Cha | Software Engineer</Typography>
-                    <Typography variant='h6' sx={{ marginBottom: 1 }}>Master's in Computer Science @ Texas A&M, researching in Multi-Agent Systems</Typography>
-                    <Typography variant='h6' sx={{ marginBottom: 1 }}>I'm focusing on AI agents @ HPE, working with LLMs, RAG, and MCP</Typography>
-                    <Typography variant='h6' sx={{ marginBottom: 1 }}>I also have experience in reinforcement learning, robotics, and imitation learning</Typography>
-                    <Typography variant='h6' sx={{ marginBottom: 1 }}>I bring a background in software engineering with hands-on experience in backend development, databases, and API integration</Typography>
-           		</Box>
-           	</Box>
-            <Box sx={{ marginTop: 20 }}>
-                <Typography variant='h4'>Skills</Typography>
-                <Box sx={{ margin: 4 }}>
-                    <Card sx={{ margin: 2, padding: 3 }}>
-                        <Typography variant='h6' sx={{ marginBottom: 1 }}>Languages:</Typography>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-around'}}>
-                            <Skills title='proficient' list={progLangProf}></Skills>
-                            <Skills title='competent' list={progLangComp}></Skills>
-                        </Box>
-                    </Card>
-                    <Card sx={{ margin: 2, padding: 3 }}>
-                        <Typography variant='h6' sx={{ marginBottom: 1 }}>Frameworks:</Typography>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-around'}}>
-                            <Skills title='proficient' list={frameworkProf}></Skills>
-                            <Skills title='competent' list={frameworkComp}></Skills>
-                        </Box>
-                    </Card>
-                    <Card sx={{ margin: 2, padding: 3 }}>
-                        <Typography variant='h6'>Developer Tools:</Typography>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-around'}}>
-                            <Skills list={developerTools.slice(0, developerToolsHalf)}></Skills>
-                            <Skills list={developerTools.slice(developerToolsHalf, )}></Skills>
-                        </Box>
-                    </Card>
-                </Box>
-            </Box>
-            <Box sx={{ marginTop: 20 }}>
-                <Typography variant='h4'>Photos</Typography>
-                <Box sx={{ padding: 1 }}>
-                    <ImageList sx={{ width: '100%' }} cols={3}>
-                    {itemData.map((item) => (
-                        <ImageListItem key={item.id}>
-                        <img
-                            src={item}
-                            loading="lazy"
-                        />
-                        </ImageListItem>
-                    ))}
-                    </ImageList>
-                </Box>
-                
-            </Box>
-            <Box sx={{ marginTop: 20 }}>
-                <Typography variant='h4'>Contacts</Typography>
-                <Card sx={{ width: 300, maxWidth: '90%', padding: 5, marginY: 6, marginX: 'auto'}}>
-                    <Stack spacing={1}>
-                        <Typography variant='h6'>jaejin0109@gmail.com</Typography>
-                        <Typography variant='h6'>(832) 745-9922</Typography>
-                        <Link variant='h6' underline="hover" color='textPrimary' href='https://www.linkedin.com/in/jaejincha/'>linkedin.com/in/jaejincha/</Link>
-                        <Link variant='h6' underline="hover" color='textPrimary' href='https://github.com/jaejin0'>github.com/jaejin0</Link>
-                    </Stack>
-                </Card>
-            </Box>
-            <Box sx={{ marginTop: 20, marginX: 'auto', display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Typography variant='h6' paddingRight={1}>This portfolio is created using</Typography>
-                <Typography variant='h6'>React and MUI</Typography>
-            </Box>
-        </Container>
-    );
-}
+              LinkedIn
+            </Button>
+          </Stack>
+        </Grid>
 
-function Skills(props) {
-    const title = props.title
-    const list = props.list
-    console.log(title)
-    return (
-        <Box marginY={1}>
-            {title !== undefined && <Typography variant='h6'>({title})</Typography>}
-            {list.map((index) => (
-                <Box key={index.id}>
-                    <Typography variant='h6' marginY={1}>{index}</Typography>
-                </Box>
-            ))}  
-        </Box>
-    );
+        <Grid item xs={12} md={5}>
+          <Card sx={{ p: 3.5, textAlign: 'center' }}>
+            <Avatar
+              alt="Jaejin Cha"
+              src={jaejin}
+              sx={{ width: 220, height: 220, maxWidth: '70vw', maxHeight: '70vw', mx: 'auto', mb: 3 }}
+            />
+            <Typography variant="h5">Jaejin Cha</Typography>
+            <Typography color="text.secondary" sx={{ mt: 0.75 }}>
+              Software Engineer · M.S. Computer Science Candidate
+            </Typography>
+            <Typography color="text.secondary" variant="body2" sx={{ mt: 2 }}>
+              Texas A&amp;M University · Hewlett Packard Enterprise
+            </Typography>
+          </Card>
+        </Grid>
+      </Grid>
+
+      <Box sx={{ mt: { xs: 10, md: 14 } }}>
+        <SectionHeading
+          eyebrow="Focus"
+          title="What I work on"
+          description="My portfolio is organized around three connected areas rather than a long list of unrelated technologies."
+        />
+        <Grid container spacing={2.5}>
+          {focusAreas.map((area) => (
+            <Grid item xs={12} md={4} key={area.title}>
+              <Card sx={{ p: 3, height: '100%' }}>
+                <Typography variant="h6" sx={{ fontWeight: 750, mb: 1.25 }}>
+                  {area.title}
+                </Typography>
+                <Typography color="text.secondary" sx={{ lineHeight: 1.7 }}>
+                  {area.text}
+                </Typography>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+
+      <Box sx={{ mt: { xs: 10, md: 14 } }}>
+        <SectionHeading
+          eyebrow="Toolkit"
+          title="Technical skills"
+          description="These are technologies and methods I have used in coursework, research, projects, or professional work."
+        />
+        <Grid container spacing={2.5}>
+          {Object.entries(skills).map(([group, items]) => (
+            <Grid item xs={12} sm={6} key={group}>
+              <Card sx={{ p: 3, height: '100%' }}>
+                <Typography variant="h6" sx={{ fontWeight: 750, mb: 2 }}>
+                  {group}
+                </Typography>
+                <TagList items={items} />
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+
+      <Box sx={{ mt: { xs: 10, md: 14 } }}>
+        <SectionHeading eyebrow="Contact" title="Let’s connect" />
+        <Card sx={{ p: 3.5 }}>
+          <Stack direction={{ xs: 'column', md: 'row' }} spacing={2} justifyContent="space-between">
+            <Box>
+              <Typography variant="h6" sx={{ fontWeight: 750 }}>Open to new-grad opportunities</Typography>
+              <Typography color="text.secondary" sx={{ mt: 0.75 }}>
+                AI platform engineering, applied AI, robotics software, simulation, and research engineering.
+              </Typography>
+            </Box>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+              <Link href="mailto:jaejin0109@gmail.com" underline="hover">jaejin0109@gmail.com</Link>
+              <Link href="https://github.com/jaejin0" target="_blank" rel="noreferrer" underline="hover">github.com/jaejin0</Link>
+            </Stack>
+          </Stack>
+        </Card>
+      </Box>
+    </Container>
+  );
 }
 
 export default AboutMe;

@@ -1,60 +1,66 @@
-import { Link } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, Box, Container, Button, Slide, useScrollTrigger } from "@mui/material";
+import { NavLink } from 'react-router-dom';
+import { AppBar, Box, Button, Container, Toolbar, Typography } from '@mui/material';
 
+const navItems = [
+  { label: 'Home', to: '/portfolio/' },
+  { label: 'Experience', to: '/portfolio/experience' },
+  { label: 'Projects', to: '/portfolio/projects' },
+  { label: 'Education', to: '/portfolio/education' },
+];
 
-// set nav bar on the left. It will look like YouTube home page. 
-// Home (button)
-// Experience
-// AI Software Engineer Intern at Endeavr Institute (button)
-// REU at UDel (button)
-// Projects
-// Trading Bot (button)
-// NatureNet (button)
-// Education
-// MS in CS (button)
-// BS in CS (button)
 function Header() {
-    return (
-        <HideOnScroll>
-            <AppBar position='sticky' sx={{ marginBottom: 4 }}>
-                <Toolbar sx={{ display: 'flex', flexWrap: 'wrap' }}>
-                    <Button component={Link} to='/portfolio/' sx={{ flexGrow: 1, display: { sm: 'block', color: '#fff' }}} disableRipple>
-                        <Typography sx={{ fontFamily: 'Monospace', fontSize: 18, letterSpacing: 4 }}>Jaejin</Typography>
-                    </Button>
-                    <Box sx={{ display: 'flex', marginX: 'auto' }}>
-                        <Box sx={{ display: { sm: 'block' } }}>
-                            <Button component={Link} to='/portfolio/' sx={{ color: '#fff', fontSize: '13px'}}>About Me</Button>
-                        </Box>
-                        <Box sx={{ display: { sm: 'block' } }}>
-                            <Button component={Link} to='/portfolio/education' sx={{ color: '#fff', fontSize: '13px'}}>Education</Button>
-                        </Box>
-                        <Box sx={{ display: { sm: 'block' } }}>
-                            <Button component={Link} to='/portfolio/experience' sx={{ color: '#fff', fontSize: '13px'}}>Experience</Button>
-                        </Box>
-                        <Box sx={{ display: { sm: 'block' } }}>
-                            <Button component={Link} to='/portfolio/projects' sx={{ color: '#fff', fontSize: '13px'}}>Projects</Button>
-                        </Box>
-                    </Box>
-                </Toolbar>
-            </AppBar>
-        </HideOnScroll>
-    );
-}
+  return (
+    <AppBar
+      position="sticky"
+      elevation={0}
+      sx={{
+        bgcolor: 'rgba(246, 248, 251, 0.9)',
+        color: 'text.primary',
+        borderBottom: '1px solid rgba(20, 32, 51, 0.08)',
+        backdropFilter: 'blur(14px)',
+      }}
+    >
+      <Container maxWidth="lg">
+        <Toolbar disableGutters sx={{ minHeight: 68, gap: 2 }}>
+          <Typography
+            component={NavLink}
+            to="/portfolio/"
+            variant="h6"
+            sx={{
+              textDecoration: 'none',
+              color: 'text.primary',
+              fontWeight: 800,
+              letterSpacing: '-0.02em',
+              mr: 'auto',
+            }}
+          >
+            Jaejin Cha
+          </Typography>
 
-function HideOnScroll(props) {
-    const { children, window } = props;
-    // Note that you normally won't need to set the window ref as useScrollTrigger
-    // will default to window.
-    // This is only being set here because the demo is in an iframe.
-    const trigger = useScrollTrigger({
-        target: window ? window() : undefined,
-    });
-  
-    return (
-        <Slide appear={false} direction="down" in={!trigger}>
-            {children}
-        </Slide>
-    );
+          <Box sx={{ display: 'flex', gap: { xs: 0.25, sm: 1 }, flexWrap: 'wrap' }}>
+            {navItems.map((item) => (
+              <Button
+                key={item.to}
+                component={NavLink}
+                to={item.to}
+                end={item.to === '/portfolio/'}
+                sx={{
+                  color: 'text.secondary',
+                  px: { xs: 1, sm: 1.5 },
+                  '&.active': {
+                    color: 'primary.main',
+                    bgcolor: 'primary.light',
+                  },
+                }}
+              >
+                {item.label}
+              </Button>
+            ))}
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
+  );
 }
 
 export default Header;
