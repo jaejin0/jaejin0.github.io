@@ -32,7 +32,7 @@ const experiences = [
   {
     organization: 'NIH AIM-AHEAD Collaborative Research',
     role: 'Research Assistant — Texas A&M, University of Washington, and Emory University',
-    period: 'Feb 2025–May 2026',
+    period: 'Feb 2025–Present',
     location: 'Remote',
     link: 'https://www.aim-ahead.net/',
     image: aimahead,
