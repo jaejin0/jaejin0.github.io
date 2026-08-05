@@ -6,6 +6,10 @@ import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
 import TagList from '../components/TagList';
 
+import jaejinPersonal1 from '../assets/jaejin1.jpeg';
+import jaejinPersonal2 from '../assets/jaejin3.jpeg';
+import jaejinPersonal3 from '../assets/jaejin9.jpeg';
+
 const resumeHref = `${process.env.PUBLIC_URL || ''}/Jaejin_Cha_Resume.pdf`;
 
 const focusAreas = [
@@ -47,6 +51,24 @@ const skills = {
   'LLM': ['RAG', 'Tool Calling', 'Text-to-SQL', 'LangChain', 'Oracle AI Database'],
   Systems: ['Linux', 'Docker', 'OCI', 'Oracle APEX', 'REST APIs', 'Git'],
 };
+
+const personalPhotos = [
+  {
+    src: jaejinPersonal1,
+    alt: 'Team dinner or casual group event',
+    caption: 'Spending time with teammates beyond formal project work.',
+  },
+  {
+    src: jaejinPersonal2,
+    alt: 'Participating in a robotics or engineering activity',
+    caption: 'Sharing research and learning from engineers and researchers in the field.',
+  },
+  {
+    src: jaejinPersonal3,
+    alt: 'Sports, fitness, or martial arts',
+    caption: 'Staying active and building discipline through regular training.',
+  },
+];
 
 function AboutMe() {
   return (
@@ -179,6 +201,71 @@ function AboutMe() {
           ))}
         </Grid>
       </Box>
+
+      <Reveal>
+        <Box
+          component="section"
+          sx={{
+            mt: { xs: 8, md: 10 },
+          }}
+        >
+          <SectionHeading
+            eyebrow="Beyond Engineering"
+            title="A little more about me"
+            description="Outside of engineering, I enjoy exploring new places, staying active, and spending time with friends and technical communities. These experiences reinforce how much I value curiosity, teamwork, and continuous learning."
+          />
+
+          <Grid container spacing={2.5}>
+            {personalPhotos.map((photo, index) => (
+              <Grid item xs={12} sm={4} key={photo.src}>
+                <Reveal delay={index * 90}>
+                  <Card
+                    variant="outlined"
+                    sx={{
+                      height: '100%',
+                      overflow: 'hidden',
+                      borderRadius: 3,
+                      transition:
+                        'transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease',
+                      '&:hover': {
+                        transform: 'translateY(-3px)',
+                        boxShadow: 3,
+                        borderColor: 'primary.light',
+                      },
+                    }}
+                  >
+                    <Box
+                      component="img"
+                      src={photo.src}
+                      alt={photo.alt}
+                      loading="lazy"
+                      sx={{
+                        display: 'block',
+                        width: '100%',
+                        height: { xs: 260, sm: 210, md: 230 },
+                        objectFit: 'cover',
+                        objectPosition: 'center',
+                      }}
+                    />
+
+                    <Box sx={{ p: 2 }}>
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{
+                          lineHeight: 1.6,
+                        }}
+                      >
+                        {photo.caption}
+                      </Typography>
+                    </Box>
+                  </Card>
+                </Reveal>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Reveal>
 
       <Box sx={{ mt: { xs: 10, md: 14 } }}>
         <SectionHeading eyebrow="Contact" title="Let’s connect" />
