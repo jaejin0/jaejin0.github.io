@@ -5,6 +5,7 @@ import aimahead from '../assets/aimahead.jpeg';
 import endeavr from '../assets/endeavr.jpeg';
 import reuIntern from '../assets/University_Of_Delaware.jpeg';
 import aggieResearch from '../assets/Texas_A&M.svg';
+import arkisys from '../assets/arkisys.jpeg';
 import texasAimbots from '../assets/Texas_Aimbots.jpg';
 import aggieCodingClub from '../assets/Aggie_Coding_Club.jpeg';
 
@@ -24,15 +25,15 @@ const experiences = [
     bullets: [
       'Built internal AI applications enabling operations leaders to query operational data in natural language and generate on-demand insights.',
       'Implemented text-to-SQL and tool-calling workflows with Oracle AI Database, PL/SQL packages, and business-rule guardrails.',
+      'Develop Oracle APEX interfaces with persistent chat history, session management, and OCI-integrated AI workflows.',
       'Built a custom vector store and similarity-search layer in Oracle 19c using PL/SQL, REST APIs, and embedding models.',
-      'Developed Oracle APEX interfaces with persistent chat history, session management, and OCI-integrated AI workflows.',
       'Prototyped MCP-based tool integration for internal agent workflows.',
     ],
   },
   {
     organization: 'NIH AIM-AHEAD Collaborative Research',
     role: 'Research Assistant — Texas A&M, University of Washington, and Emory University',
-    period: 'Feb 2025–Present',
+    period: 'Aug 2025–Present',
     location: 'Remote',
     link: 'https://www.aim-ahead.net/',
     image: aimahead,
@@ -44,14 +45,15 @@ const experiences = [
   },
   {
     organization: 'ENDEAVR Institute',
-    role: 'AI Engineer Intern',
+    role: 'Machine Learning Engineer Intern',
     period: 'Oct 2024–Feb 2025',
     location: 'College Station, TX',
     link: 'https://endeavr.city/',
     image: endeavr,
     tags: ['Python', 'PyTorch', 'GAIL', 'PPO', 'Simulation'],
     bullets: [
-      'Developed autonomous-driving imitation-learning components using GAIL and PPO, including generator-side implementation and simulation-oriented training workflows.',
+      'Implemented generator-side components for an autonomous-driving imitation-learning pipeline using GAIL and PPO.',
+      'Developed simulation-based training workflows for policy-learning experiments.',
     ],
   },
   {
@@ -63,20 +65,34 @@ const experiences = [
     image: reuIntern,
     tags: ['Python', 'PyTorch', 'DQN', 'DDPG', 'Autonomous Driving'],
     bullets: [
-      'Implemented DQN and DDPG models in an autonomous-driving simulator for trajectory control and energy-efficiency experiments.',
+      'Implemented DQN- and DDPG-based agents in an autonomous-driving simulator for trajectory-control experiments.',
+      'Conducted energy-efficiency experiments using learned driving policies.',
     ],
   },
   {
     organization: 'Texas A&M University',
     role: 'Undergraduate Research Assistant — Big Data Systems',
-    period: 'Aug 2022–May 2023',
+    period: 'Sep 2022–May 2023',
     location: 'College Station, TX',
     link: 'https://aggieresearch1.wpengine.com/undergraduates/',
     image: aggieResearch,
-    tags: ['Linux', 'Apache Spark', 'HDFS', 'Bash'],
+    tags: ['Python', 'C++', 'Linux', 'Apache Spark', 'HDFS', 'Bash'],
     bullets: [
-      'Investigated Apache Spark memory behavior on Linux clusters and integrated Spark workloads with HDFS for performance experiments.',
-      'Modified a graph-mining workflow to convert multi-label graph data into a binary representation.',
+      'Configured Apache Spark and Hadoop Distributed File System environments on Linux clusters to support distributed data-processing experiments.',
+      'Developed Python and Bash scripts to collect, parse, and analyze garbage-collection logs from Spark applications for runtime and memory-behavior profiling.',
+      'Modified Peregrine source code to support conversion of multi-label graph datasets into binary format for graph-processing workflows.'
+    ],
+  },
+  {
+    organization: 'Student Engineers\' Council at Texas A&M University',
+    role: 'SEC Directed Intern — Frontend Development',
+    period: 'Jun 2022–Aug 2022',
+    location: 'Remote',
+    link: 'https://www.arkisys.com/',
+    image: arkisys,
+    tags: ['JavaScript', 'React'],
+    bullets: [
+      'Developed a frontend dashboard for aerospace startup Arkisys, enabling users to view, organize, and manage satellite information through a structured interface.'
     ],
   },
 ];
