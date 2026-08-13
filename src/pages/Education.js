@@ -13,10 +13,10 @@ const education = [
     institution: 'Texas A&M University',
     period: 'Aug 2024–Dec 2026',
     image: tamu,
-    summary: 'M.S. student conducting thesis research in multi-robot systems, with a focus on communication-aware planning and rendezvous under cyclic paths.',
+    summary: 'M.S. student focused on multi-robot planning, optimization, simulation, and sequential decision-making for autonomous systems.',
     details: [
       'Advisor: Dr. Dylan Shell',
-      'Research areas: multi-robot communication, graph-based planning, coordination, and autonomous systems',
+      'Research areas: multi-agent planning, Graphs of Convex Sets, coordination, simulation, and autonomous systems',
       'Paper accepted to IROS 2026',
     ],
     coursework: [
@@ -55,7 +55,7 @@ function Education() {
       <SectionHeading
         eyebrow="Education"
         title="Texas A&M University"
-        description="Graduate research in multi-robot systems supported by a broad computer science and mathematics foundation."
+        description="Graduate work in planning, optimization, multi-agent learning, and autonomous systems supported by a broad computer science and mathematics foundation."
       />
 
       <Stack spacing={3}>

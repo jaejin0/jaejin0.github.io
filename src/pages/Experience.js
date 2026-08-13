@@ -21,13 +21,26 @@ const experiences = [
     location: 'Spring, TX',
     link: 'https://www.hpe.com/us/en/home.html',
     image: hpe,
-    tags: ['Oracle APEX', 'PL/SQL', 'OCI', 'RAG', 'Text-to-SQL', 'REST APIs'],
+    tags: ['Oracle AI Database', 'PL/SQL', 'OCI', 'REST APIs', 'Vector Search', 'Tool Calling'],
     bullets: [
-      'Built internal AI applications enabling operations leaders to query operational data in natural language and generate on-demand insights.',
-      'Implemented text-to-SQL and tool-calling workflows with Oracle AI Database, PL/SQL packages, and business-rule guardrails.',
-      'Develop Oracle APEX interfaces with persistent chat history, session management, and OCI-integrated AI workflows.',
-      'Built a custom vector store and similarity-search layer in Oracle 19c using PL/SQL, REST APIs, and embedding models.',
-      'Prototyped MCP-based tool integration for internal agent workflows.',
+      'Build production AI applications enabling operations teams to explore enterprise data through natural-language queries and generate on-demand insights.',
+      'Implement text-to-SQL and tool-calling workflows with Oracle AI Database and PL/SQL packages, incorporating business-rule guardrails.',
+      'Built a custom vector storage and similarity-search layer in Oracle 19c using PL/SQL, REST APIs, and embedding models.',
+      'Develop OCI-integrated application workflows connecting model-driven interfaces with persistent enterprise data and services.',
+    ],
+  },
+  {
+    organization: 'Texas A&M University',
+    role: 'Graduate Researcher — Multi-Robot Planning & Coordination',
+    period: 'Aug 2024–Present',
+    location: 'College Station, TX',
+    link: 'https://engineering.tamu.edu/cse/index.html',
+    image: aggieResearch,
+    tags: ['Python', 'Graphs of Convex Sets', 'Multi-Agent Planning', 'Simulation', 'Optimization'],
+    bullets: [
+      'Formulated cyclic multi-robot rendezvous as constrained shortest-path planning on a Graph of Convex Sets in phase-time space under range-limited communication.',
+      'Built Python simulation and GCS planning infrastructure for distributed robot coordination and implemented graph sparsification to reduce planning complexity.',
+      'Evaluated against consensus baselines on an 11-robot topology and validated planned trajectories on Robotarium hardware; paper accepted to IROS 2026.',
     ],
   },
   {
@@ -52,8 +65,8 @@ const experiences = [
     image: endeavr,
     tags: ['Python', 'PyTorch', 'GAIL', 'PPO', 'Simulation'],
     bullets: [
-      'Implemented generator-side components for an autonomous-driving imitation-learning pipeline using GAIL and PPO.',
-      'Developed simulation-based training workflows for policy-learning experiments.',
+      'Implemented a PPO-based generator for a GAIL imitation-learning pipeline in PyTorch.',
+      'Validated the imitation-learning workflow on Gymnasium environments through simulation-based policy experiments.',
     ],
   },
   {
@@ -65,8 +78,8 @@ const experiences = [
     image: reuIntern,
     tags: ['Python', 'PyTorch', 'DQN', 'DDPG', 'Autonomous Driving'],
     bullets: [
-      'Implemented DQN- and DDPG-based agents in an autonomous-driving simulator for trajectory-control experiments.',
-      'Conducted energy-efficiency experiments using learned driving policies.',
+      'Modified a Gymnasium-based highway simulator and implemented DQN and DDPG agents for discrete and continuous vehicle control.',
+      'Ran reward-weight experiments on trade-offs between energy efficiency and driving metrics and presented results at a research symposium.',
     ],
   },
   {
@@ -105,7 +118,7 @@ const publications = [
     status: 'Accepted',
     year: '2026',
     description:
-      'Developed graph-based planning and execution methods for communication-aware coordination among robots following cyclic paths.',
+      'Introduced a role-based coordination method and planned courier trajectories in phase-time using Graphs of Convex Sets under range-limited communication; evaluated in simulation and on Robotarium hardware.',
     link: '',
   },
   {
@@ -115,7 +128,7 @@ const publications = [
     status: 'Defended',
     year: '2026',
     description:
-      'Studied rendezvous-based communication and coordination for robots operating along cyclic paths under limited communication.',
+      'Studied communication-aware coordination and rendezvous planning for multi-robot systems operating on cyclic paths under limited communication.',
     link: '',
   },
 ];
@@ -247,7 +260,7 @@ function Experience() {
       <SectionHeading
         eyebrow="Experience"
         title="Industry and research experience"
-        description="Work spanning enterprise AI systems, health data modeling, autonomous-driving research, and distributed data systems."
+        description="Production software, multi-robot planning, autonomous-driving ML, and distributed data systems."
       />
       <Stack spacing={3}>
         {experiences.map((item, index) => (
@@ -261,7 +274,7 @@ function Experience() {
         <SectionHeading
           eyebrow="Research"
           title="Research and publications"
-          description="My graduate research focuses on communication-aware planning and coordination in multi-robot systems."
+          description="IROS 2026 work on constrained spatiotemporal planning, range-limited communication, simulation, and Robotarium validation."
         />
         <Stack spacing={2.5}>
           {publications.map((publication, index) => (

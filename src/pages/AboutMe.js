@@ -14,42 +14,42 @@ const resumeHref = `${process.env.PUBLIC_URL || ''}/Jaejin_Cha_Resume.pdf`;
 
 const focusAreas = [
   {
-    title: 'AI Systems & Data Platforms',
-    text: 'Enterprise AI applications, natural-language data exploration, RAG, tool-calling workflows, Oracle databases, OCI, and REST APIs.',
+    title: 'ML Systems & Infrastructure',
+    text: 'Production ML-backed software, data systems, model and workflow integration, scalable evaluation, and reliable backend services.',
   },
   {
-    title: 'Robotics & Autonomous Systems',
-    text: 'Multi-robot communication, graph-based planning, autonomous-driving simulation, reinforcement learning, and imitation learning.',
+    title: 'Simulation & Evaluation',
+    text: 'Reproducible simulation, reinforcement and imitation learning, planner benchmarking, performance analysis, and autonomous-driving experiments.',
   },
   {
-    title: 'Applied Machine Learning',
-    text: 'Computer vision, clinical data modeling, model evaluation, and end-to-end ML-backed software systems.',
+    title: 'Planning & Autonomous Systems',
+    text: 'Multi-agent planning, Graphs of Convex Sets, sequential decision-making, communication-aware coordination, and autonomy software.',
   },
 ];
 
 const featuredWork = [
   {
-    title: 'Enterprise AI at HPE',
-    text: 'AI Database applications for natural-language data exploration, text-to-SQL, RAG, tool calling, guardrails, and operational insights.',
-    to: '/portfolio/experience',
-  },
-  {
-    title: 'Multi-Robot Research',
-    text: 'IROS 2026-accepted work on communication-aware planning and execution for robots following cyclic paths.',
-    to: '/portfolio/experience',
-  },
-  {
-    title: 'End-to-End Software Projects',
-    text: 'Applied ML and full-stack systems spanning computer vision, PostgreSQL-backed applications, APIs, deployment, and user workflows.',
+    title: 'AutonomyForge',
+    text: 'An in-progress C++20 multi-agent planning and simulation framework for reproducible autonomy experiments, benchmarking, and evaluation.',
     to: '/portfolio/projects',
+  },
+  {
+    title: 'IROS 2026 — Multi-Robot Trajectory Planning',
+    text: 'Communication-aware planning in phase-time using Graphs of Convex Sets, with simulation studies and Robotarium hardware validation.',
+    to: '/portfolio/experience',
+  },
+  {
+    title: 'Production ML & Data Systems at HPE',
+    text: 'Production AI and data workflows spanning database-backed applications, tool use, vector search, APIs, and enterprise data systems.',
+    to: '/portfolio/experience',
   },
 ];
 
 const skills = {
-  Languages: ['Python', 'C++', 'SQL', 'PL/SQL', 'JavaScript'],
-  'AI / ML': ['PyTorch', 'scikit-learn', 'OpenCV', 'Reinforcement Learning', 'Imitation Learning'],
-  'LLM': ['RAG', 'Tool Calling', 'Text-to-SQL', 'LangChain', 'Oracle AI Database'],
-  Systems: ['Linux', 'Docker', 'OCI', 'Oracle APEX', 'REST APIs', 'Git'],
+  Languages: ['Python', 'C++', 'SQL'],
+  'Systems & Data': ['Linux', 'Docker', 'Git', 'REST APIs', 'Apache Spark', 'HDFS', 'Oracle Database', 'PostgreSQL', 'OCI'],
+  'ML & Autonomy': ['PyTorch', 'Gymnasium', 'Reinforcement Learning', 'Imitation Learning', 'Graphs of Convex Sets', 'Multi-Agent Planning'],
+  'Applied AI': ['Tool Calling', 'Text-to-SQL', 'RAG', 'Vector Search'],
 };
 
 const personalPhotos = [
@@ -80,16 +80,16 @@ function AboutMe() {
               variant="overline"
               sx={{ color: 'primary.main', fontWeight: 780, letterSpacing: '0.14em' }}
             >
-              AI Systems • Cloud & Data Platforms • Robotics
+              ML Systems • Simulation • Planning
             </Typography>
             <Typography variant="h3" component="h1" sx={{ mt: 1.5, mb: 3 }}>
-              I build intelligent software that connects models with real-world data and systems.
+              I build software systems for intelligent decision-making, simulation, and machine learning.
             </Typography>
             <Typography color="text.secondary" sx={{ fontSize: '1.08rem', lineHeight: 1.82, maxWidth: 760 }}>
               I am an M.S. Computer Science student at Texas A&amp;M University, graduating in December 2026,
-              and a Software Engineer at HPE. I build enterprise AI applications for natural-language data
-              exploration and database-backed workflows, while researching multi-robot communication and
-              graph-based planning.
+              and a Software Engineer at HPE. My work spans production AI and data systems, autonomous-driving
+              simulation, reinforcement and imitation learning, and IROS 2026 research in multi-robot trajectory planning.
+              I am especially interested in ML systems, sequential decision-making, planning, and simulation for intelligent and autonomous systems.
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ mt: 4 }}>
               <Button component={RouterLink} to="/experience" variant="contained" size="large">
@@ -135,7 +135,7 @@ function AboutMe() {
         <SectionHeading
           eyebrow="Focus"
           title="What I work on"
-          description="Three connected areas define my work: building AI-enabled software, reasoning over data, and developing intelligent systems that operate in the physical world."
+          description="My work sits at the intersection of strong software engineering, machine learning systems, and computational methods for simulation and autonomous decision-making."
         />
         <Grid container spacing={2.5}>
           {focusAreas.map((area, index) => (
@@ -159,7 +159,7 @@ function AboutMe() {
         <SectionHeading
           eyebrow="Selected Work"
           title="Evidence across systems and research"
-          description="A few representative areas that connect my professional software work, robotics research, and project experience."
+          description="Representative work connecting production software engineering, autonomy research, and systems-oriented project development."
         />
         <Grid container spacing={2.5}>
           {featuredWork.map((item, index) => (
@@ -170,9 +170,9 @@ function AboutMe() {
                   <Typography color="text.secondary" sx={{ mt: 1.25, mb: 2.5, lineHeight: 1.7, flexGrow: 1 }}>
                     {item.text}
                   </Typography>
-                  <Button component={RouterLink} to={item.to} sx={{ alignSelf: 'flex-start', px: 0 }}>
+                  {/* <Button component={RouterLink} to={item.to} sx={{ alignSelf: 'flex-start', px: 0 }}>
                     Explore
-                  </Button>
+                  </Button> */}
                 </Card>
               </Reveal>
             </Grid>
@@ -275,7 +275,7 @@ function AboutMe() {
               <Box>
                 <Typography variant="h6">Open to December 2026 new-grad opportunities</Typography>
                 <Typography color="text.secondary" sx={{ mt: 0.75 }}>
-                  AI platform engineering, applied AI, robotics software, simulation, and research engineering.
+                  Software engineering, ML systems and infrastructure, simulation and evaluation, autonomy software, and planning-focused roles.
                 </Typography>
               </Box>
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>

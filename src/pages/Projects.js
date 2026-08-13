@@ -11,18 +11,30 @@ import TagList from '../components/TagList';
 
 const projectGroups = [
   {
-    title: 'AI / ML and Robotics',
-    description: 'Projects focused on learning systems, sequential decision-making, and computer vision.',
+    title: 'Simulation, Planning & Learning',
+    description: 'Projects focused on autonomy-oriented software, reproducible simulation, and sequential decision-making.',
     projects: [
       {
-        title: 'JAL-AM Trading Simulator',
+        title: 'AutonomyForge',
+        period: 'Aug 2026–Present',
+        image: null, // Replace with an imported screenshot or GIF when you have a visual ready.
+        // link: 'YOUR_AUTONOMYFORGE_REPOSITORY_URL',
+        tags: ['C++20', 'Python', 'Multi-Agent Planning', 'Simulation', 'Benchmarking'],
+        summary: 'An in-progress multi-agent planning and simulation framework for reproducible autonomy experiments and planner evaluation.',
+        bullets: [
+          'Building an extensible C++20 simulation framework with configurable scenarios and a common interface for evaluating planning algorithms.',
+          //'Implemented parallel scenario evaluation with deterministic seeds and performance benchmarking across planning algorithms.',
+        ],
+      },
+      {
+        title: 'Bitcoin Trading Simulator',
         period: 'Nov 2024–Feb 2025',
         image: jalam_trading_bot,
         tags: ['Python', 'PyTorch', 'NumPy', 'MDP', 'Multi-Agent Learning'],
         summary: 'A market-simulation environment for reinforcement-learning and agent-modeling experiments.',
         bullets: [
           'Formulated the simulator as a Markov decision process with explicit observations, actions, and reward design.',
-          'Implemented Joint-Action Learning with Agent Modeling for sequential decision-making experiments.',
+          'Trained reinforcement-learning agents for sequential decision-making experiments.',
         ],
       },
       {
@@ -41,8 +53,8 @@ const projectGroups = [
     ],
   },
   {
-    title: 'Software Systems and Platforms',
-    description: 'Projects demonstrating full-stack delivery, relational databases, deployment, and technical leadership.',
+    title: 'Applied Software Systems',
+    description: 'Earlier projects demonstrating end-to-end software delivery, databases, deployment, and technical ownership.',
     projects: [
       {
         title: 'MAES Points Reward System',
@@ -153,8 +165,8 @@ function Projects() {
     <Container maxWidth="lg" sx={{ py: { xs: 7, md: 10 } }}>
       <SectionHeading
         eyebrow="Projects"
-        title="Selected software and AI projects"
-        description="Projects demonstrating applied machine learning, full-stack delivery, databases, deployment, and team leadership."
+        title="Selected systems and ML projects"
+        description="Projects across autonomy simulation, sequential decision-making, applied machine learning, and software platforms."
       />
 
       <Stack spacing={9}>
