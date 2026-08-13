@@ -37,7 +37,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/portfolio/" element={<Layout />}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<AboutMe />} />
           <Route path="experience" element={<Experience />} />
           <Route path="projects" element={<Projects />} />

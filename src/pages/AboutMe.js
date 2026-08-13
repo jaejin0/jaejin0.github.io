@@ -92,10 +92,10 @@ function AboutMe() {
               graph-based planning.
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ mt: 4 }}>
-              <Button component={RouterLink} to="/portfolio/experience" variant="contained" size="large">
+              <Button component={RouterLink} to="/experience" variant="contained" size="large">
                 View Experience
               </Button>
-              <Button component={RouterLink} to="/portfolio/projects" variant="outlined" size="large">
+              <Button component={RouterLink} to="/projects" variant="outlined" size="large">
                 View Projects
               </Button>
               <Button component="a" href={resumeHref} target="_blank" rel="noreferrer" size="large">

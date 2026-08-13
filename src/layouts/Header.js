@@ -2,10 +2,10 @@ import { NavLink } from 'react-router-dom';
 import { AppBar, Box, Button, Container, Toolbar, Typography } from '@mui/material';
 
 const navItems = [
-  { label: 'Home', to: '/portfolio/' },
-  { label: 'Experience', to: '/portfolio/experience' },
-  { label: 'Projects', to: '/portfolio/projects' },
-  { label: 'Education', to: '/portfolio/education' },
+  { label: 'Home', to: '/' },
+  { label: 'Experience', to: '/experience' },
+  { label: 'Projects', to: '/projects' },
+  { label: 'Education', to: '/education' },
 ];
 
 const resumeHref = `${process.env.PUBLIC_URL || ''}/Jaejin_Cha_Resume.pdf`;
@@ -35,7 +35,7 @@ function Header() {
         >
           <Typography
             component={NavLink}
-            to="/portfolio/"
+            to="/"
             variant="h6"
             sx={{
               textDecoration: 'none',
@@ -58,7 +58,7 @@ function Header() {
                 key={item.to}
                 component={NavLink}
                 to={item.to}
-                end={item.to === '/portfolio/'}
+                end={item.to === '/'}
                 size="small"
                 sx={{
                   color: 'text.secondary',

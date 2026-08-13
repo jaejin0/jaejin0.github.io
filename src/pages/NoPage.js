@@ -10,7 +10,7 @@ function NoPage() {
         <Typography color="text.secondary">
           The page you requested does not exist or may have moved.
         </Typography>
-        <Button component={Link} to="/portfolio/" variant="contained">Return home</Button>
+        <Button component={Link} to="/" variant="contained">Return home</Button>
       </Stack>
     </Container>
   );
