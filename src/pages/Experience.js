@@ -1,7 +1,7 @@
 import { Box, Card, CardContent, Container, Link, Stack, Typography } from '@mui/material';
 
 import hpe from '../assets/HPE.png';
-import aimahead from '../assets/aimahead.jpeg';
+// import aimahead from '../assets/aimahead.jpeg';
 import endeavr from '../assets/endeavr.jpeg';
 import reuIntern from '../assets/University_Of_Delaware.jpeg';
 import aggieResearch from '../assets/Texas_A&M.svg';
@@ -16,17 +16,16 @@ import TagList from '../components/TagList';
 const experiences = [
   {
     organization: 'Hewlett Packard Enterprise',
-    role: 'Software Engineer — AI Applications and Enterprise Systems',
+    role: 'Software Engineer — AI & Enterprise Systems',
     period: 'Intern: May 2025–May 2026 · Full-time: Jun 2026–Present',
     location: 'Spring, TX',
     link: 'https://www.hpe.com/us/en/home.html',
     image: hpe,
-    tags: ['Oracle AI Database', 'PL/SQL', 'OCI', 'REST APIs', 'Vector Search', 'Tool Calling'],
+    tags: ['Oracle AI Database', 'PL/SQL', 'Vector Search', 'Tool Calling'],
     bullets: [
       'Build production AI applications enabling operations teams to explore enterprise data through natural-language queries and generate on-demand insights.',
-      'Implement text-to-SQL and tool-calling workflows with Oracle AI Database and PL/SQL packages, incorporating business-rule guardrails.',
+      'Implement text-to-SQL and tool-calling workflows with Oracle AI Database and PL/SQL packages, incorporating business-rule constraints.',
       'Built a custom vector storage and similarity-search layer in Oracle 19c using PL/SQL, REST APIs, and embedding models.',
-      'Develop OCI-integrated application workflows connecting model-driven interfaces with persistent enterprise data and services.',
     ],
   },
   {
@@ -36,24 +35,24 @@ const experiences = [
     location: 'College Station, TX',
     link: 'https://engineering.tamu.edu/cse/index.html',
     image: aggieResearch,
-    tags: ['Python', 'Graphs of Convex Sets', 'Multi-Agent Planning', 'Simulation', 'Optimization'],
+    tags: ['Graphs of Convex Sets', 'Robotarium', 'Multi-Agent Planning', 'Simulation', 'Optimization'],
     bullets: [
-      'Formulated cyclic multi-robot rendezvous as constrained shortest-path planning on a Graph of Convex Sets in phase-time space under range-limited communication.',
-      'Built Python simulation and GCS planning infrastructure for distributed robot coordination and implemented graph sparsification to reduce planning complexity.',
+      'Formulated cyclic multi-robot rendezvous as constrained shortest-path planning on a Graph of Convex Sets in phase-time under range-limited communication.',
+      'Built Python simulation and GCS planning infrastructure for multi-robot coordination and implemented graph sparsification to reduce planning complexity.',
       'Evaluated against consensus baselines on an 11-robot topology and validated planned trajectories on Robotarium hardware; paper accepted to IROS 2026.',
     ],
   },
   {
-    organization: 'NIH AIM-AHEAD Collaborative Research',
-    role: 'Research Assistant — Texas A&M, University of Washington, and Emory University',
+    organization: 'Texas A&M University',
+    role: 'Research Assistant — NIH AIM-AHEAD Research',
     period: 'Aug 2025–Present',
     location: 'Remote',
     link: 'https://www.aim-ahead.net/',
-    image: aimahead,
-    tags: ['Python', 'SQL', 'EHR Data', 'Survival Modeling', 'Fairness Evaluation'],
+    image: aggieResearch,
+    tags: ['Python', 'SQL', 'EHR Data', 'Risk Modeling', 'Calibration', 'Fairness'],
     bullets: [
-      'Built cardiovascular EHR data pipelines for cohort construction, feature engineering, longitudinal preparation, and survival modeling.',
-      'Evaluated survival models using calibration, performance metrics, and subgroup fairness analysis on real-world clinical data.',
+      'Built Python/SQL pipelines over OCHIN 2023 EHR data to construct a cohort of 500,000+ T2D patients for cardiovascular risk analysis.',
+      'Evaluated AHA PREVENT risk equations using C-index, calibration, and subgroup fairness analyses across the clinical cohort.',
     ],
   },
   {
@@ -63,7 +62,7 @@ const experiences = [
     location: 'College Station, TX',
     link: 'https://endeavr.city/',
     image: endeavr,
-    tags: ['Python', 'PyTorch', 'GAIL', 'PPO', 'Simulation'],
+    tags: ['PyTorch', 'GAIL', 'PPO', 'Imitation Learning'],
     bullets: [
       'Implemented a PPO-based generator for a GAIL imitation-learning pipeline in PyTorch.',
       'Validated the imitation-learning workflow on Gymnasium environments through simulation-based policy experiments.',
@@ -76,10 +75,10 @@ const experiences = [
     location: 'Newark, DE',
     link: 'https://mrsec.udel.edu/undergraduate-education-and-outreach/reu/',
     image: reuIntern,
-    tags: ['Python', 'PyTorch', 'DQN', 'DDPG', 'Autonomous Driving'],
+    tags: ['Reinforcement Learning', 'PyTorch', 'DQN', 'DDPG', 'Autonomous Driving'],
     bullets: [
       'Modified a Gymnasium-based highway simulator and implemented DQN and DDPG agents for discrete and continuous vehicle control.',
-      'Ran reward-weight experiments on trade-offs between energy efficiency and driving metrics and presented results at a research symposium.',
+      'Evaluated reward-weight trade-offs between energy efficiency and driving-performance metrics and presented results at a research symposium.',
     ],
   },
   {
@@ -91,13 +90,12 @@ const experiences = [
     image: aggieResearch,
     tags: ['Python', 'C++', 'Linux', 'Apache Spark', 'HDFS', 'Bash'],
     bullets: [
-      'Configured Apache Spark and Hadoop Distributed File System environments on Linux clusters to support distributed data-processing experiments.',
-      'Developed Python and Bash scripts to collect, parse, and analyze garbage-collection logs from Spark applications for runtime and memory-behavior profiling.',
-      'Modified Peregrine source code to support conversion of multi-label graph datasets into binary format for graph-processing workflows.'
+      'Configured Apache Spark and HDFS environments on Linux clusters and built Python/Bash tooling to profile runtime and memory behavior from garbage-collection logs.',
+      'Modified Peregrine C++ source code to convert multi-label graph datasets into binary format for graph-processing workflows.',
     ],
   },
   {
-    organization: 'Student Engineers\' Council at Texas A&M University',
+    organization: 'Arkisys',
     role: 'SEC Directed Intern — Frontend Development',
     period: 'Jun 2022–Aug 2022',
     location: 'Remote',
@@ -139,7 +137,7 @@ const activities = [
     role: 'Computer Vision Developer',
     period: 'Aug 2023–May 2024',
     image: texasAimbots,
-    tags: ['Python', 'OpenCV'],
+    tags: ['Python', 'OpenCV', 'Computer Vision'],
     bullets: [
       'Implemented OpenCV-based target detection and contour extraction for RoboMaster University League competition robots.',
     ],

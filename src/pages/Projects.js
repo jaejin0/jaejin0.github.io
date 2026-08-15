@@ -1,9 +1,12 @@
 import { Box, Button, Card, CardContent, Container, Grid, Link, Stack, Typography } from '@mui/material';
 
+import robotarium from '../assets/robotarium.jpeg';
 import jalam_trading_bot from '../assets/JAL_AM_Trading_Bot.jpg';
+import highwaySim from '../assets/highwaysim.png';
+
 import natureNet from '../assets/NatureNet.jpeg';
 import maesPointsReward from '../assets/maes_points_reward_system.jpeg';
-import kungFuTea from '../assets/kung_fu_tea.jpg';
+// import kungFuTea from '../assets/kung_fu_tea.jpg';
 
 import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
@@ -11,51 +14,74 @@ import TagList from '../components/TagList';
 
 const projectGroups = [
   {
-    title: 'Simulation, Planning & Learning',
-    description: 'Projects focused on autonomy-oriented software, reproducible simulation, and sequential decision-making.',
+    title: 'Autonomy, Simulation, & ML Systems',
+    description: 'Systems and research projects in autonomy simulation, multi-agent planning, and sequential decision-making.',
     projects: [
       {
         title: 'AutonomyForge',
         period: 'Aug 2026–Present',
         image: null, // Replace with an imported screenshot or GIF when you have a visual ready.
         // link: 'YOUR_AUTONOMYFORGE_REPOSITORY_URL',
-        tags: ['C++20', 'Python', 'Multi-Agent Planning', 'Simulation', 'Benchmarking'],
-        summary: 'An in-progress multi-agent planning and simulation framework for reproducible autonomy experiments and planner evaluation.',
+        tags: ['C++20', 'CMake', 'Multi-Agent Planning', 'Simulation'],
+        summary: 'C++20 multi-agent simulation and evaluation framework for reproducible autonomy experiments.',
         bullets: [
-          'Building an extensible C++20 simulation framework with configurable scenarios and a common interface for evaluating planning algorithms.',
-          //'Implemented parallel scenario evaluation with deterministic seeds and performance benchmarking across planning algorithms.',
+          'Building a deterministic C++20 simulation core with configurable 2D scenarios, collision checking, trajectory execution, and reproducible run logging.',
+          'Designing a common planner interface for multi-agent evaluation, beginning with grid-based A* and prioritized planning.',
         ],
+      },
+      {
+          title: 'Multi-Robot Cyclic Rendezvous Trajectory Planning',
+          period: 'Aug 2025–March 2026',
+          image: robotarium,
+          // link: 'YOUR_RENDEZVOUS_COMMUNICATION_SIM'
+          tags: ['Python', 'Graph of Convex Sets', 'Robotarium', 'Multi-Agent Planning', 'Trajectory Planning','Simulation', 'Optimization'],
+          summary: 'IROS 2026 research on communication-aware planning for multi-robot systems with cyclic rendezvous constraints.',
+          bullets: [
+            'Formulated cyclic multi-robot rendezvous as constrained shortest-path planning in phase–time space.',
+            'Built simulation and planning infrastructure, evaluated coordination strategies on an 11-robot topology, and validated trajectories on Robotarium hardware.',
+          ],
       },
       {
         title: 'Bitcoin Trading Simulator',
         period: 'Nov 2024–Feb 2025',
         image: jalam_trading_bot,
-        tags: ['Python', 'PyTorch', 'NumPy', 'MDP', 'Multi-Agent Learning'],
-        summary: 'A market-simulation environment for reinforcement-learning and agent-modeling experiments.',
+        tags: ['Python', 'PyTorch', 'NumPy', 'MDP', 'Reinforcement Learning'],
+        summary: 'An MDP-based market simulation environment for reinforcement-learning experiments in sequential decision-making.',
         bullets: [
-          'Formulated the simulator as a Markov decision process with explicit observations, actions, and reward design.',
-          'Trained reinforcement-learning agents for sequential decision-making experiments.',
+          'Designed an MDP environment with configurable observations, actions, transaction mechanics, and reward functions.',
+          'Trained and evaluated reinforcement-learning agents on historical Bitcoin market data.',
         ],
       },
+      {
+        title: 'Autonomous Driving RL Simulation',
+        period: 'Jun 2023–Aug 2023',
+        image: highwaySim,
+        tags: ['Python', 'PyTorch', 'Gymnasium', 'Reinforcement Learning', 'DQN', 'DDPG'],
+        summary: 'Reinforcement-learning experiments for vehicle control in a simulated highway environment.',
+        bullets: [
+          'Modified a Gymnasium-based highway simulator and implemented DQN and DDPG agents for discrete and continuous vehicle control.',
+          'Evaluated reward-weight tradeoffs between energy efficiency and driving-performance objectives.',
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Applied AI & Software Systems',
+    description: 'End-to-end software projects spanning applied ML, backend systems, databases, deployment, and product development.',
+    projects: [
       {
         title: 'NatureNet',
         period: 'Jan 2024–May 2024',
         image: natureNet,
         link: 'https://drive.google.com/file/d/1sy7SBjxcC6cigLgP87VX8SLH8FAio2MV/view?usp=sharing',
         linkLabel: 'View demo',
-        tags: ['Python', 'PyTorch', 'OpenCV', 'Flask', 'React', 'Express'],
+        tags: ['Python', 'YOLOv8', 'RoboFlow', 'Flask', 'React', 'Express'],
         summary: 'A full-stack wildlife detection and alerting system for dangerous-animal sightings.',
         bullets: [
           'Trained a custom computer-vision model and exposed inference through a Flask API.',
           'Built SMS/email notification workflows and a React/Express interface for user settings.',
         ],
       },
-    ],
-  },
-  {
-    title: 'Applied Software Systems',
-    description: 'Earlier projects demonstrating end-to-end software delivery, databases, deployment, and technical ownership.',
-    projects: [
       {
         title: 'MAES Points Reward System',
         period: 'Jan 2024–May 2024',
@@ -69,17 +95,17 @@ const projectGroups = [
           'Contributed across requirements, design, implementation, testing, deployment, and user training within an Agile team.',
         ],
       },
-      {
-        title: 'Kung Fu Tea POS Prototype',
-        period: 'Aug 2023–Dec 2023',
-        image: kungFuTea,
-        tags: ['Vue.js', 'Express.js', 'JavaScript', 'Heroku'],
-        summary: 'A mock point-of-sale web application developed as an Agile team project.',
-        bullets: [
-          'Built a Vue.js frontend and Express.js backend with third-party API integrations.',
-          'Served as project manager while contributing to prototype design and implementation.',
-        ],
-      },
+      // {
+      //   title: 'Kung Fu Tea POS Prototype',
+      //   period: 'Aug 2023–Dec 2023',
+      //   image: kungFuTea,
+      //   tags: ['Vue.js', 'Express.js', 'JavaScript', 'Heroku'],
+      //   summary: 'A mock point-of-sale web application developed as an Agile team project.',
+      //   bullets: [
+      //     'Built a Vue.js frontend and Express.js backend with third-party API integrations.',
+      //     'Served as project manager while contributing to prototype design and implementation.',
+      //   ],
+      // },
     ],
   },
 ];

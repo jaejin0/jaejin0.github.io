@@ -14,33 +14,33 @@ const resumeHref = `${process.env.PUBLIC_URL || ''}/Jaejin_Cha_Resume.pdf`;
 
 const focusAreas = [
   {
-    title: 'ML Systems & Infrastructure',
-    text: 'Production ML-backed software, data systems, model and workflow integration, scalable evaluation, and reliable backend services.',
+    title: 'Autonomy & Planning',
+    text: 'Multi-agent planning, sequential decision-making, communication-aware coordination and software for autonomous systems.',
   },
   {
     title: 'Simulation & Evaluation',
-    text: 'Reproducible simulation, reinforcement and imitation learning, planner benchmarking, performance analysis, and autonomous-driving experiments.',
+    text: 'Reproducible simulation, planner evaluation, reinforcement and imitation learning, and autonomous-driving experiments.',
   },
   {
-    title: 'Planning & Autonomous Systems',
-    text: 'Multi-agent planning, Graphs of Convex Sets, sequential decision-making, communication-aware coordination, and autonomy software.',
+    title: 'AI/ML Systems',
+    text: 'Production AI applications, data systems, model and workflow integration, tool calling, retrieval, and reliable backend software.',
   },
 ];
 
 const featuredWork = [
   {
     title: 'AutonomyForge',
-    text: 'An in-progress C++20 multi-agent planning and simulation framework for reproducible autonomy experiments, benchmarking, and evaluation.',
+    text: 'A C++20 multi-agent planning and simulation framework for reproducible autonomy experiments and planner evaluation.',
     to: '/portfolio/projects',
   },
   {
-    title: 'IROS 2026 — Multi-Robot Trajectory Planning',
-    text: 'Communication-aware planning in phase-time using Graphs of Convex Sets, with simulation studies and Robotarium hardware validation.',
+    title: 'IROS 2026 — Multi-Robot Cyclic Rendezvous',
+    text: 'Communication-aware multi-robot trajectory planning using Graphs of Convex Sets in phase-time, with simulation evaluation and Robotarium validation.',
     to: '/portfolio/experience',
   },
   {
-    title: 'Production ML & Data Systems at HPE',
-    text: 'Production AI and data workflows spanning database-backed applications, tool use, vector search, APIs, and enterprise data systems.',
+    title: 'Production AI Database at HPE',
+    text: 'Production AI applications for enterprise data, including text-to-SQL, tool-calling workflows, vector search, APIs, and Oracle-backed systems.',
     to: '/portfolio/experience',
   },
 ];
@@ -48,7 +48,7 @@ const featuredWork = [
 const skills = {
   Languages: ['Python', 'C++', 'SQL'],
   'Systems & Data': ['Linux', 'Docker', 'Git', 'REST APIs', 'Apache Spark', 'HDFS', 'Oracle Database', 'PostgreSQL', 'OCI'],
-  'ML & Autonomy': ['PyTorch', 'Gymnasium', 'Reinforcement Learning', 'Imitation Learning', 'Graphs of Convex Sets', 'Multi-Agent Planning'],
+  'Autonomy & ML': ['PyTorch', 'Gymnasium', 'Reinforcement Learning', 'Imitation Learning', 'Graphs of Convex Sets', 'Multi-Agent Planning'],
   'Applied AI': ['Tool Calling', 'Text-to-SQL', 'RAG', 'Vector Search'],
 };
 
@@ -56,17 +56,17 @@ const personalPhotos = [
   {
     src: jaejinPersonal1,
     alt: 'Team dinner or casual group event',
-    caption: 'Spending time with teammates beyond formal project work.',
+    caption: 'Spending time with teammates beyond project.',
   },
   {
     src: jaejinPersonal2,
     alt: 'Participating in a robotics or engineering activity',
-    caption: 'Sharing research and learning from engineers and researchers in the field.',
+    caption: 'Sharing research and learning from researchers.',
   },
   {
     src: jaejinPersonal3,
     alt: 'Sports, fitness, or martial arts',
-    caption: 'Staying active and building discipline through regular training.',
+    caption: 'Training and staying active outside of work.',
   },
 ];
 
@@ -80,16 +80,15 @@ function AboutMe() {
               variant="overline"
               sx={{ color: 'primary.main', fontWeight: 780, letterSpacing: '0.14em' }}
             >
-              ML Systems • Simulation • Planning
+              ML Systems • Simulation • Autonomy
             </Typography>
             <Typography variant="h3" component="h1" sx={{ mt: 1.5, mb: 3 }}>
-              I build software systems for intelligent decision-making, simulation, and machine learning.
+              I build software for simulation, planning, and intelligent decision-making.
             </Typography>
             <Typography color="text.secondary" sx={{ fontSize: '1.08rem', lineHeight: 1.82, maxWidth: 760 }}>
-              I am an M.S. Computer Science student at Texas A&amp;M University, graduating in December 2026,
-              and a Software Engineer at HPE. My work spans production AI and data systems, autonomous-driving
-              simulation, reinforcement and imitation learning, and IROS 2026 research in multi-robot trajectory planning.
-              I am especially interested in ML systems, sequential decision-making, planning, and simulation for intelligent and autonomous systems.
+              I am a Software Engineer at HPE and an M.S. Computer Science student at Texas A&M University, graduating in December 2026. 
+              My work spans production AI systems, reinforcement learning, autonomous-driving simulation, and multi-agent planning, 
+              with a particular interest in simulation and intelligent decision-making.
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ mt: 4 }}>
               <Button component={RouterLink} to="/experience" variant="contained" size="large">
