@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.fa34343c.css",
-    "main.js": "/static/js/main.e9866b3a.js",
-    "static/js/453.5d79306b.chunk.js": "/static/js/453.5d79306b.chunk.js",
+    "main.js": "/static/js/main.1600344a.js",
+    "static/js/453.c27cc104.chunk.js": "/static/js/453.c27cc104.chunk.js",
     "static/media/graduation_Alma_Mater.jpeg": "/static/media/graduation_Alma_Mater.36132e6d9cd4681cf2d0.jpeg",
     "static/media/jaejin.jpeg": "/static/media/jaejin.f52f562776fc88e3ff1f.jpeg",
     "static/media/NatureNet.jpeg": "/static/media/NatureNet.eedb37d98fb094ea6d51.jpeg",
@@ -20,11 +20,11 @@
     "static/media/Texas_A&M.svg": "/static/media/Texas_A&M.2235d149621fd443da21536f41e137ce.svg",
     "index.html": "/index.html",
     "main.fa34343c.css.map": "/static/css/main.fa34343c.css.map",
-    "main.e9866b3a.js.map": "/static/js/main.e9866b3a.js.map",
-    "453.5d79306b.chunk.js.map": "/static/js/453.5d79306b.chunk.js.map"
+    "main.1600344a.js.map": "/static/js/main.1600344a.js.map",
+    "453.c27cc104.chunk.js.map": "/static/js/453.c27cc104.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fa34343c.css",
-    "static/js/main.e9866b3a.js"
+    "static/js/main.1600344a.js"
   ]
 }
