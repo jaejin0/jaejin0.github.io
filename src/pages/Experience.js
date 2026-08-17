@@ -2,7 +2,7 @@ import { Box, Card, CardContent, Container, Link, Stack, Typography } from '@mui
 
 import hpe from '../assets/HPE.png';
 // import aimahead from '../assets/aimahead.jpeg';
-import endeavr from '../assets/endeavr.jpeg';
+// import endeavr from '../assets/endeavr.jpeg';
 import reuIntern from '../assets/University_Of_Delaware.jpeg';
 import aggieResearch from '../assets/Texas_A&M.svg';
 import arkisys from '../assets/arkisys.jpeg';
@@ -12,6 +12,7 @@ import aggieCodingClub from '../assets/Aggie_Coding_Club.jpeg';
 import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
 import TagList from '../components/TagList';
+const endeavr = `${process.env.PUBLIC_URL || ''}/endeavr.jpeg`;
 
 const experiences = [
   {
