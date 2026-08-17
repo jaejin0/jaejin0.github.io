@@ -25,7 +25,7 @@ function Layout() {
     <div className="app-shell">
       <ScrollToTop />
       <Header />
-      <main>
+      <main data-prerender-ready>
         <Outlet />
       </main>
       <Footer />

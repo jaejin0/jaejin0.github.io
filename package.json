@@ -14,7 +14,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-in-viewport": "^1.0.0-beta.2",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -22,6 +22,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
+    "postbuild": "node scripts/prerender.mjs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -45,6 +46,10 @@
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",
+    "puppeteer": "^25.7.0",
     "react-router-dom": "^6.22.3"
+  },
+  "allowScripts": {
+    "puppeteer@25.7.0": true
   }
 }
