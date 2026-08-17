@@ -2,6 +2,7 @@ import { Box, Button, Card, CardContent, Container, Grid, Link, Stack, Typograph
 
 import robotarium from '../assets/robotarium.jpeg';
 import jalam_trading_bot from '../assets/JAL_AM_Trading_Bot.jpg';
+import ros2 from '../assets/ros2.png';
 import highwaySim from '../assets/highwaysim.png';
 
 import natureNet from '../assets/NatureNet.jpeg';
@@ -14,7 +15,7 @@ import TagList from '../components/TagList';
 
 const projectGroups = [
   {
-    title: 'Autonomy, Simulation, & ML Systems',
+    title: 'Robotics, Simulation, & ML Systems',
     description: 'Systems and research projects in autonomy simulation, multi-agent planning, and sequential decision-making.',
     projects: [
       {
@@ -25,8 +26,7 @@ const projectGroups = [
         tags: ['C++20', 'CMake', 'Multi-Agent Planning', 'Simulation'],
         summary: 'C++20 multi-agent simulation and evaluation framework for reproducible autonomy experiments.',
         bullets: [
-          'Building a deterministic C++20 simulation core with configurable 2D scenarios, collision checking, trajectory execution, and reproducible run logging.',
-          'Designing a common planner interface for multi-agent evaluation, beginning with grid-based A* and prioritized planning.',
+          'Designing and building a C++20 multi-agent simulation and planning framework for deterministic autonomy experiments, with modular interfaces for scenarios, planners, simulation, and evaluation.',
         ],
       },
       {
@@ -53,6 +53,18 @@ const projectGroups = [
         ],
       },
       {
+        title: 'Graduate Robotics Coursework — ROS 2',
+        period: 'Aug 2024–Dec 2024',
+        image: ros2,
+        tags: ['Python', 'ROS 2', 'PRM', 'Dijkstra', 'Particle Filter', 'Robot Navigation', 'Simulation'],
+        summary: 'Team-based projects implementing classical robotics algorithms for planning, localization, perception, and navigation in ROS 2.',
+        bullets: [
+          'Implemented PRM-based robot navigation with obstacle-aware roadmap construction, Dijkstra shortest-path search, and velocity control to reach user-defined goals.',
+          'Built particle-filter localization using motion, compass, and floor-sensor observations, with resampling, pose estimation, and RViz visualization.',
+
+        ],
+      },
+      {
         title: 'Autonomous Driving RL Simulation',
         period: 'Jun 2023–Aug 2023',
         image: highwaySim,
@@ -61,6 +73,7 @@ const projectGroups = [
         bullets: [
           'Modified a Gymnasium-based highway simulator and implemented DQN and DDPG agents for discrete and continuous vehicle control.',
           'Evaluated reward-weight tradeoffs between energy efficiency and driving-performance objectives.',
+          'Developed LiDAR processing and tracking nodes using ROS 2 publishers/subscribers, and integrated project workflows with ROS 2 launch files and bag playback.',
         ],
       },
     ],

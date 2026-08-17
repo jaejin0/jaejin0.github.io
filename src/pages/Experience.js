@@ -6,13 +6,17 @@ import hpe from '../assets/HPE.png';
 import reuIntern from '../assets/University_Of_Delaware.jpeg';
 import aggieResearch from '../assets/Texas_A&M.svg';
 import arkisys from '../assets/arkisys.jpeg';
-import texasAimbots from '../assets/Texas_Aimbots.jpg';
-import aggieCodingClub from '../assets/Aggie_Coding_Club.jpeg';
+// import texasAimbots from '../assets/Texas_Aimbots.jpg';
+// import aggieCodingClub from '../assets/Aggie_Coding_Club.jpeg';
 
 import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
 import TagList from '../components/TagList';
+
 const endeavr = `${process.env.PUBLIC_URL || ''}/endeavr.jpeg`;
+const texasAimbots = `${process.env.PUBLIC_URL || ''}/Texas_Aimbots.jpg`;
+const aggieCodingClub = `${process.env.PUBLIC_URL || ''}/Aggie_Coding_Club.jpeg`;
+
 
 const experiences = [
   {
@@ -22,10 +26,10 @@ const experiences = [
     location: 'Spring, TX',
     link: 'https://www.hpe.com/us/en/home.html',
     image: hpe,
-    tags: ['Oracle AI Database', 'PL/SQL', 'Vector Search', 'Tool Calling'],
+    tags: ['Oracle AI Database', 'Oracle Cloud Infrastructure', 'PL/SQL', 'Vector Search', 'Tool Calling'],
     bullets: [
-      'Build production AI applications enabling operations teams to explore enterprise data through natural-language queries and generate on-demand insights.',
-      'Implement text-to-SQL and tool-calling workflows with Oracle AI Database and PL/SQL packages, incorporating business-rule constraints.',
+      'Build production AI applications for operations teams to query enterprise data in natural language and generate on-demand insights.',
+      'Implement text-to-SQL, RAG, and tool-calling workflows using Oracle AI Database and PL/SQL, integrating LLM and embedding APIs through Oracle Cloud Infrastructure (OCI) with role-based data-access constraints.',
       'Built a custom vector storage and similarity-search layer in Oracle 19c using PL/SQL, REST APIs, and embedding models.',
     ],
   },
@@ -52,7 +56,7 @@ const experiences = [
     image: aggieResearch,
     tags: ['Python', 'SQL', 'EHR Data', 'Risk Modeling', 'Calibration', 'Fairness'],
     bullets: [
-      'Built Python/SQL pipelines over OCHIN 2023 EHR data to construct a cohort of 500,000+ T2D patients for cardiovascular risk analysis.',
+      'Built Python/SQL pipelines over the OCHIN 2023 EHR dataset to construct a 440,000+ patients T2D cohort for cardiovascular risk analysis.',
       'Evaluated AHA PREVENT risk equations using C-index, calibration, and subgroup fairness analyses across the clinical cohort.',
     ],
   },
