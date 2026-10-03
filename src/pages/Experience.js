@@ -115,10 +115,10 @@ const experiences = [
 
 const publications = [
   {
-    authors: 'Jaejin Cha, Dylan Shell',
+    authors: 'Jaejin Cha, Dylan A Shell',
     title: 'Planning and Execution for Multi-Robot Cyclic Rendezvous via Graphs of Convex Sets',
     venue: 'IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)',
-    status: 'Accepted',
+    status: 'Published',
     year: '2026',
     description:
       'Introduced a role-based coordination method and planned courier trajectories in phase-time using Graphs of Convex Sets under range-limited communication; evaluated in simulation and on Robotarium hardware.',

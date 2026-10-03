@@ -29,11 +29,6 @@ const focusAreas = [
 
 const featuredWork = [
   {
-    title: 'AutonomyForge',
-    text: 'A C++20 multi-agent planning and simulation framework for reproducible autonomy experiments and planner evaluation.',
-    to: '/portfolio/projects',
-  },
-  {
     title: 'IROS 2026 — Multi-Robot Cyclic Rendezvous',
     text: 'Communication-aware multi-robot trajectory planning using Graphs of Convex Sets in phase-time, with simulation evaluation and Robotarium validation.',
     to: '/portfolio/experience',
@@ -42,6 +37,11 @@ const featuredWork = [
     title: 'Production AI Database at HPE',
     text: 'Production AI applications for enterprise data, including text-to-SQL, tool-calling workflows, vector search, APIs, and Oracle-backed systems.',
     to: '/portfolio/experience',
+  },
+  {
+    title: 'End-to-End Software Projects',
+    text: 'Applied ML and full-stack systems spanning computer vision, PostgreSQL-backed applications, APIs, deployment, and user workflows.',
+    to: '/portfolio/projects',
   },
 ];
 
