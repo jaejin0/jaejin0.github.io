@@ -18,17 +18,17 @@ const projectGroups = [
     title: 'Robotics, Simulation, & ML Systems',
     description: 'Systems and research projects in autonomy simulation, multi-agent planning, and sequential decision-making.',
     projects: [
-      {
-        title: 'AutonomyForge',
-        period: 'Aug 2026–Present',
-        image: null, // Replace with an imported screenshot or GIF when you have a visual ready.
-        // link: 'YOUR_AUTONOMYFORGE_REPOSITORY_URL',
-        tags: ['C++20', 'CMake', 'Multi-Agent Planning', 'Simulation'],
-        summary: 'C++20 multi-agent simulation and evaluation framework for reproducible autonomy experiments.',
-        bullets: [
-          'Designing and building a C++20 multi-agent simulation and planning framework for deterministic autonomy experiments, with modular interfaces for scenarios, planners, simulation, and evaluation.',
-        ],
-      },
+      // {
+      //   title: 'AutonomyForge',
+      //   period: 'Aug 2026–Present',
+      //   image: null, // Replace with an imported screenshot or GIF when you have a visual ready.
+      //   // link: 'YOUR_AUTONOMYFORGE_REPOSITORY_URL',
+      //   tags: ['C++20', 'CMake', 'Multi-Agent Planning', 'Simulation'],
+      //   summary: 'C++20 multi-agent simulation and evaluation framework for reproducible autonomy experiments.',
+      //   bullets: [
+      //     'Designing and building a C++20 multi-agent simulation and planning framework for deterministic autonomy experiments, with modular interfaces for scenarios, planners, simulation, and evaluation.',
+      //   ],
+      // },
       {
           title: 'Multi-Robot Cyclic Rendezvous Trajectory Planning',
           period: 'Aug 2025–March 2026',
